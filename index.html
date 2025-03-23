@@ -5,80 +5,77 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Daxen | Roblox Developer</title>
   <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+  <style>
+    body { font-family: 'Inter', sans-serif; }
+  </style>
 </head>
-<body class="bg-gray-900 text-white font-sans">
+<body class="bg-gray-900 text-white">
   <!-- Header -->
-  <header class="p-6 bg-gray-800 shadow-lg">
-    <div class="container mx-auto flex justify-between items-center">
-      <h1 class="text-3xl font-bold">Daxen</h1>
-      <nav>
-        <a href="#projects" class="mx-4 hover:text-blue-400">Projects</a>
-        <a href="#services" class="mx-4 hover:text-blue-400">Services</a>
-        <a href="#contact" class="mx-4 hover:text-blue-400">Contact</a>
-      </nav>
-    </div>
+  <header class="p-6 flex justify-between items-center max-w-6xl mx-auto">
+    <h1 class="text-2xl font-bold">Daxen</h1>
+    <nav class="space-x-6">
+      <a href="#projects" class="hover:text-blue-400">Projects</a>
+      <a href="#services" class="hover:text-blue-400">Services</a>
+      <a href="#contact" class="hover:text-blue-400">Contact</a>
+    </nav>
   </header>
 
   <!-- Hero -->
-  <section class="text-center py-20 bg-gradient-to-r from-gray-800 to-gray-700">
-    <h2 class="text-4xl font-bold mb-4">Roblox Developer & Scripter</h2>
-    <p class="text-lg mb-6">Bringing innovative systems, optimized scripts, and quality to your Roblox games.</p>
-    <a href="#contact" class="bg-blue-500 px-6 py-3 rounded-full text-white hover:bg-blue-600">Hire Me</a>
+  <section class="text-center py-20">
+    <h2 class="text-4xl md:text-5xl font-bold mb-4">Roblox Developer</h2>
+    <p class="text-lg text-gray-400 mb-8">Optimized systems. Clean scripts. Quality results.</p>
+    <a href="#contact" class="bg-blue-500 px-8 py-3 rounded-full hover:bg-blue-600">Work With Me</a>
   </section>
 
   <!-- Projects -->
-  <section id="projects" class="container mx-auto py-16 px-6">
-    <h3 class="text-3xl font-bold mb-10 text-center">Featured Projects</h3>
-    <div class="grid md:grid-cols-3 gap-10">
-      <!-- Project Example -->
-      <div class="bg-gray-800 p-6 rounded-lg shadow-md">
-        <h4 class="text-xl font-semibold mb-4">Uber Driver Revamped</h4>
-        <p class="mb-4">Custom driving job system featuring orders, ratings, and premium features.</p>
-        <a href="#" class="text-blue-400 hover:underline">View Details</a>
+  <section id="projects" class="max-w-6xl mx-auto py-16 px-6">
+    <h3 class="text-3xl font-bold mb-12 text-center">Projects</h3>
+    <div class="grid md:grid-cols-3 gap-8">
+      <div class="bg-gray-800 p-6 rounded-lg">
+        <h4 class="text-xl font-semibold mb-2">Uber Driver Revamped</h4>
+        <p class="text-gray-400 text-sm">Custom driving job system with ratings and premium features.</p>
       </div>
 
-      <div class="bg-gray-800 p-6 rounded-lg shadow-md">
-        <h4 class="text-xl font-semibold mb-4">Procedural Terrain Generator</h4>
-        <p class="mb-4">Optimized terrain generator with biomes, rivers, and chunk-based generation.</p>
-        <a href="#" class="text-blue-400 hover:underline">View Details</a>
+      <div class="bg-gray-800 p-6 rounded-lg">
+        <h4 class="text-xl font-semibold mb-2">Procedural Terrain Generator</h4>
+        <p class="text-gray-400 text-sm">Optimized chunk-based terrain with rivers, biomes, and resources.</p>
       </div>
 
-      <div class="bg-gray-800 p-6 rounded-lg shadow-md">
-        <h4 class="text-xl font-semibold mb-4">Custom Admin Panel</h4>
-        <p class="mb-4">Fully customizable in-game admin panel with role-based permissions and commands.</p>
-        <a href="#" class="text-blue-400 hover:underline">View Details</a>
+      <div class="bg-gray-800 p-6 rounded-lg">
+        <h4 class="text-xl font-semibold mb-2">Custom Admin Panel</h4>
+        <p class="text-gray-400 text-sm">In-game panel with role permissions and clean UI.</p>
       </div>
     </div>
   </section>
 
   <!-- Services -->
   <section id="services" class="bg-gray-800 py-16 px-6">
-    <h3 class="text-3xl font-bold mb-10 text-center">Services Offered</h3>
-    <div class="grid md:grid-cols-3 gap-10 container mx-auto">
-      <div class="bg-gray-900 p-6 rounded-lg shadow-md">
-        <h4 class="text-xl font-semibold mb-4">Custom Systems</h4>
-        <p>Create unique systems tailored for your game: combat, shops, pets, quests, and more.</p>
+    <h3 class="text-3xl font-bold mb-12 text-center">Services</h3>
+    <div class="grid md:grid-cols-3 gap-8 max-w-6xl mx-auto">
+      <div class="p-6">
+        <h4 class="text-xl font-semibold mb-2">Custom Systems</h4>
+        <p class="text-gray-400 text-sm">Unique game mechanics: combat, shops, quests, and more.</p>
       </div>
-      <div class="bg-gray-900 p-6 rounded-lg shadow-md">
-        <h4 class="text-xl font-semibold mb-4">Optimization & Bug Fixing</h4>
-        <p>Make your scripts smooth, efficient, and bug-free for better performance and reliability.</p>
+      <div class="p-6">
+        <h4 class="text-xl font-semibold mb-2">Optimization</h4>
+        <p class="text-gray-400 text-sm">Clean, efficient, bug-free scripting for smooth gameplay.</p>
       </div>
-      <div class="bg-gray-900 p-6 rounded-lg shadow-md">
-        <h4 class="text-xl font-semibold mb-4">Consulting & Advice</h4>
-        <p>Need guidance on game design or scripting best practices? I'm here to help.</p>
+      <div class="p-6">
+        <h4 class="text-xl font-semibold mb-2">Consulting</h4>
+        <p class="text-gray-400 text-sm">Advice on systems design, performance, and best practices.</p>
       </div>
     </div>
   </section>
 
   <!-- Contact -->
-  <section id="contact" class="container mx-auto py-16 px-6 text-center">
-    <h3 class="text-3xl font-bold mb-8">Contact Me</h3>
-    <p class="mb-4">Reach out on Discord: <strong>chillnook</strong></p>
-    <p class="mb-4">Or email me at: <strong>daxenbusiness@protonmail.com</strong></p>
+  <section id="contact" class="py-16 text-center">
+    <h3 class="text-3xl font-bold mb-6">Get In Touch</h3>
+    <p class="text-gray-400 mb-2">Discord: <strong>chillnook</strong></p>
+    <p class="text-gray-400">Email: <strong>daxenbusiness@protonmail.com</strong></p>
   </section>
 
-  <footer class="bg-gray-800 text-center py-4">
-    <p class="text-sm text-gray-400">&copy; 2025 Daxen. All rights reserved.</p>
+  <footer class="text-center py-4 text-gray-500 text-sm">
+    &copy; 2025 Daxen. All rights reserved.
   </footer>
 </body>
 </html>
