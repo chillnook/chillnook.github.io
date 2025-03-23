@@ -6,76 +6,200 @@
   <title>Daxen | Roblox Developer</title>
   <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
   <style>
-    body { font-family: 'Inter', sans-serif; }
+    body { 
+      font-family: 'Inter', sans-serif; 
+      background-color: #1b0402;
+    }
+    .glow {
+      box-shadow: 0 0 15px rgba(237, 189, 37, 0.5);
+    }
+    .solid-header {
+      background-color: #472110;
+    }
+    .solid-button {
+      background-color: #DE8200;
+      color: #1b0402;
+    }
+    .card-bg {
+      background-color: #472110;
+      border: 1px solid #2c1b12;
+      box-shadow: 0 0 10px rgba(0,0,0,0.3);
+    }
   </style>
 </head>
-<body class="bg-gray-900 text-white">
-  <!-- Header -->
-  <header class="p-6 flex justify-between items-center max-w-6xl mx-auto">
-    <h1 class="text-2xl font-bold">Daxen</h1>
-    <nav class="space-x-6">
-      <a href="#projects" class="hover:text-blue-400">Projects</a>
-      <a href="#services" class="hover:text-blue-400">Services</a>
-      <a href="#contact" class="hover:text-blue-400">Contact</a>
+<body class="text-gray-100">
+
+    <header class="solid-header p-6 flex flex-col md:flex-row justify-between items-center w-full shadow-lg text-center md:text-left space-y-4 md:space-y-0">
+    <h1 class="text-2xl font-bold text-[#DE8200] md:ml-10">Daxen</h1>
+    <nav class="flex flex-col md:flex-row space-y-2 md:space-y-0 md:space-x-8 text-gray-300 md:mr-10 font-semibold uppercase tracking-wide items-center">
+      <a href="#projects" class="hover:text-[#EDBD25] transition duration-200">Projects</a>
+      <a href="#services" class="hover:text-[#EDBD25]">Services</a>
+      <a href="#contact" class="hover:text-[#EDBD25]">Contact</a>
+      <a href="terms.html" class="hover:text-[#EDBD25]">Terms</a>
     </nav>
   </header>
 
-  <!-- Hero -->
-  <section class="text-center py-20">
-    <h2 class="text-4xl md:text-5xl font-bold mb-4">Roblox Developer</h2>
-    <p class="text-lg text-gray-400 mb-8">Optimized systems. Clean scripts. Quality results.</p>
-    <a href="#contact" class="bg-blue-500 px-8 py-3 rounded-full hover:bg-blue-600">Work With Me</a>
-  </section>
+    <main class="w-full max-w-7xl mx-auto px-6 py-16 space-y-32">
 
-  <!-- Projects -->
-  <section id="projects" class="max-w-6xl mx-auto py-16 px-6">
-    <h3 class="text-3xl font-bold mb-12 text-center">Projects</h3>
-    <div class="grid md:grid-cols-3 gap-8">
-      <div class="bg-gray-800 p-6 rounded-lg">
-        <h4 class="text-xl font-semibold mb-2">Uber Driver Revamped</h4>
-        <p class="text-gray-400 text-sm">Custom driving job system with ratings and premium features.</p>
-      </div>
+        <section class="text-center space-y-8">
+      <h2 class="text-6xl font-extrabold text-white">
+        Hey, I'm <span style="color: #EDBD25;">Daxen</span>
+      </h2>
+      <p class="text-lg text-gray-300 max-w-3xl mx-auto">I create clean and powerful Roblox systems and scripts that are built to perform. Let your game stand out with optimized and efficient solutions that really enhance the player experience!</p>
+      <a href="#contact" class="solid-button px-10 py-4 rounded-full hover:bg-[#EDBD25] hover:text-[#1b0402] glow transition font-semibold inline-block">Work with Me</a>
+    </section>
 
-      <div class="bg-gray-800 p-6 rounded-lg">
-        <h4 class="text-xl font-semibold mb-2">Procedural Terrain Generator</h4>
-        <p class="text-gray-400 text-sm">Optimized chunk-based terrain with rivers, biomes, and resources.</p>
-      </div>
+        <section id="projects" class="space-y-20">
+  <h3 class="text-4xl font-bold text-center text-[#EDBD25]">Projects I've Built</h3>
+  <div class="grid md:grid-cols-3 gap-14">
 
-      <div class="bg-gray-800 p-6 rounded-lg">
-        <h4 class="text-xl font-semibold mb-2">Custom Admin Panel</h4>
-        <p class="text-gray-400 text-sm">In-game panel with role permissions and clean UI.</p>
+    <!-- Card Template -->
+    <div class="rounded-xl p-8 card-bg flex flex-col justify-between items-center text-center space-y-6 h-full">
+      <h4 class="text-xl font-semibold text-[#EDBD25]">Leaderboard System</h4>
+      <p class="text-gray-300 text-sm">Real-time leaderboard tracking player stats like cash, kills, or scores.</p>
+      <a href="#" class="solid-button px-4 py-2 rounded-md inline-block">View Demo</a>
+    </div>
+
+    <div class="rounded-xl p-8 card-bg flex flex-col justify-between items-center text-center space-y-6 h-full">
+      <h4 class="text-xl font-semibold text-[#EDBD25]">Procedural Terrain Generator</h4>
+      <p class="text-gray-300 text-sm">Chunk-based terrain system with biomes and rivers.</p>
+      <a href="#" class="solid-button px-4 py-2 rounded-md inline-block">View Demo</a>
+    </div>
+
+    <div class="rounded-xl p-8 card-bg flex flex-col justify-between items-center text-center space-y-6 h-full">
+      <h4 class="text-xl font-semibold text-[#EDBD25]">Custom Admin Panel</h4>
+      <p class="text-gray-300 text-sm">Admin panel with permissions, UI, and command support.</p>
+      <a href="#" class="solid-button px-4 py-2 rounded-md inline-block">View Demo</a>
+    </div>
+
+    <div class="rounded-xl p-8 card-bg flex flex-col justify-between items-center text-center space-y-6 h-full">
+      <h4 class="text-xl font-semibold text-[#EDBD25]">Job System</h4>
+      <p class="text-gray-300 text-sm">Basic job framework like delivery driver, cashier, or miner with pay and cooldowns.</p>
+      <a href="#" class="solid-button px-4 py-2 rounded-md inline-block">View Demo</a>
+    </div>
+
+    <div class="rounded-xl p-8 card-bg flex flex-col justify-between items-center text-center space-y-6 h-full">
+      <h4 class="text-xl font-semibold text-[#EDBD25]">Inventory System</h4>
+      <p class="text-gray-300 text-sm">Grid inventory with drag/drop, stacking, and save/load support.</p>
+      <a href="#" class="solid-button px-4 py-2 rounded-md inline-block">View Demo</a>
+    </div>
+
+    <div class="rounded-xl p-8 card-bg flex flex-col justify-between items-center text-center space-y-6 h-full">
+      <h4 class="text-xl font-semibold text-[#EDBD25]">Shop System</h4>
+      <p class="text-gray-300 text-sm">Custom shop with categories, buy/sell options, and currency handling.</p>
+      <a href="#" class="solid-button px-4 py-2 rounded-md inline-block">View Demo</a>
+    </div>
+
+    <div class="rounded-xl p-8 card-bg flex flex-col justify-between items-center text-center space-y-6 h-full">
+      <h4 class="text-xl font-semibold text-[#EDBD25]">Pet System</h4>
+      <p class="text-gray-300 text-sm">Pet following system with attachment and upgrades.</p>
+      <a href="#" class="solid-button px-4 py-2 rounded-md inline-block">View Demo</a>
+    </div>
+
+    <div class="rounded-xl p-8 card-bg flex flex-col justify-between items-center text-center space-y-6 h-full">
+      <h4 class="text-xl font-semibold text-[#EDBD25]">Day/Night Cycle</h4>
+      <p class="text-gray-300 text-sm">Smooth time transitions with optional special events.</p>
+      <a href="#" class="solid-button px-4 py-2 rounded-md inline-block">View Demo</a>
+    </div>
+
+    <div class="rounded-xl p-8 card-bg flex flex-col justify-between items-center text-center space-y-6 h-full">
+      <h4 class="text-xl font-semibold text-[#EDBD25]">Quest System</h4>
+      <p class="text-gray-300 text-sm">Multi-step quests with acceptance, tracking, and completion.</p>
+      <a href="#" class="solid-button px-4 py-2 rounded-md inline-block">View Demo</a>
+    </div>
+  </div>
+</section>
+
+        <section id="services" class="space-y-20">
+  <h3 class="text-4xl font-bold text-center text-[#EDBD25]">What I Offer</h3>
+  <div class="grid md:grid-cols-3 gap-10">
+
+    <div class="rounded-xl p-8 card-bg">
+      <h4 class="text-xl font-semibold mb-4">Custom Systems 💡</h4>
+      <p class="text-gray-300 text-sm">Need combat systems, quest frameworks, shops, or something entirely unique? I design clean, reliable systems tailored specifically for your game's needs.</p>
+    </div>
+
+    <div class="rounded-xl p-8 card-bg">
+      <h4 class="text-xl font-semibold mb-4">Optimization & Performance ⚙️</h4>
+      <p class="text-gray-300 text-sm">Lag-free, efficient scripting focused on smooth performance. Whether you're scaling up or refining mechanics, I’ll make sure your game runs at its best.</p>
+    </div>
+
+    <div class="rounded-xl p-8 card-bg">
+  <h4 class="text-xl font-semibold mb-4">Bug Fixing & Debugging 🐞</h4>
+  <p class="text-gray-300 text-sm">Stuck with persistent bugs or weird behavior? I’ll troubleshoot, clean up, and make sure everything runs smooth and error-free.</p>
+</div>
+  </div>
+</section>
+
+    <section id="faq" class="text-center space-y-10">
+  <h3 class="text-4xl font-bold text-[#EDBD25]">FAQ</h3>
+  <div class="max-w-3xl mx-auto space-y-4">
+    <div class="border-b border-gray-700">
+      <button class="w-full flex justify-between items-center py-4 text-lg text-[#EDBD25] focus:outline-none" onclick="toggleFaq(this)">
+        Do you require an upfront payment?
+        <span class="transform transition-transform">▼</span>
+      </button>
+      <div class="hidden text-gray-300 text-sm pb-4 text-left">
+        For commissions, I typically take 25% upfront before starting the project to secure the work and schedule.
       </div>
     </div>
-  </section>
 
-  <!-- Services -->
-  <section id="services" class="bg-gray-800 py-16 px-6">
-    <h3 class="text-3xl font-bold mb-12 text-center">Services</h3>
-    <div class="grid md:grid-cols-3 gap-8 max-w-6xl mx-auto">
-      <div class="p-6">
-        <h4 class="text-xl font-semibold mb-2">Custom Systems</h4>
-        <p class="text-gray-400 text-sm">Unique game mechanics: combat, shops, quests, and more.</p>
-      </div>
-      <div class="p-6">
-        <h4 class="text-xl font-semibold mb-2">Optimization</h4>
-        <p class="text-gray-400 text-sm">Clean, efficient, bug-free scripting for smooth gameplay.</p>
-      </div>
-      <div class="p-6">
-        <h4 class="text-xl font-semibold mb-2">Consulting</h4>
-        <p class="text-gray-400 text-sm">Advice on systems design, performance, and best practices.</p>
+    <div class="border-b border-gray-700">
+      <button class="w-full flex justify-between items-center py-4 text-lg text-[#EDBD25] focus:outline-none" onclick="toggleFaq(this)">
+        How long do projects take?
+        <span class="transform transition-transform">▼</span>
+      </button>
+      <div class="hidden text-gray-300 text-sm pb-4 text-left">
+        I’m happy to share that most systems are delivered within the agreed timeframe! I always include some time for testing and polishing to ensure the results are the best they can be.
       </div>
     </div>
-  </section>
+    <div class="border-b border-gray-700">
+      <button class="w-full flex justify-between items-center py-4 text-lg text-[#EDBD25] focus:outline-none" onclick="toggleFaq(this)">
+        Do you offer revisions?
+        <span class="transform transition-transform">▼</span>
+      </button>
+      <div class="hidden text-gray-300 text-sm pb-4 text-left">
+        I’m glad to offer 2-3 revisions for free to make sure the final product really meets your expectations!
+      </div>
+    </div>
+    <div class="border-b border-gray-700">
+      <button class="w-full flex justify-between items-center py-4 text-lg text-[#EDBD25] focus:outline-none" onclick="toggleFaq(this)">
+        What payment methods do you accept?
+        <span class="transform transition-transform">▼</span>
+      </button>
+      <div class="hidden text-gray-300 text-sm pb-4 text-left">
+        Payments are discussed in USD or CAD and accepted via PayPal.
+      </div>
+    </div>
+    <div class="border-b border-gray-700">
+      <button class="w-full flex justify-between items-center py-4 text-lg text-[#EDBD25] focus:outline-none" onclick="toggleFaq(this)">
+        What’s your development process?
+        <span class="transform transition-transform">▼</span>
+      </button>
+      <div class="hidden text-gray-300 text-sm pb-4 text-left">
+        The process is straightforward: Inquiry → Quote → Development → Demo → Delivery. I’ll provide regular updates throughout, ensuring you’re informed at every stage.
+      </div>
+    </div>
+  </div>
+</section>
 
-  <!-- Contact -->
-  <section id="contact" class="py-16 text-center">
-    <h3 class="text-3xl font-bold mb-6">Get In Touch</h3>
-    <p class="text-gray-400 mb-2">Discord: <strong>chillnook</strong></p>
-    <p class="text-gray-400">Email: <strong>daxenbusiness@protonmail.com</strong></p>
-  </section>
+<script>
+function toggleFaq(button) {
+  const content = button.nextElementSibling;
+  const arrow = button.querySelector('span');
+  content.classList.toggle('hidden');
+  arrow.classList.toggle('rotate-180');
+}
+</script>
 
-  <footer class="text-center py-4 text-gray-500 text-sm">
-    &copy; 2025 Daxen. All rights reserved.
-  </footer>
+    <section id="contact" class="text-center space-y-10">
+      <h3 class="text-4xl font-bold text-[#EDBD25]">Get In Touch</h3>
+      <p class="text-gray-300">Discord: <strong>chillnook</strong></p>
+      <p class="text-gray-300">Email: <strong>daxenbusiness@protonmail.com</strong></p>
+      <p class="text-sm text-gray-400">Let's make something awesome together.</p>
+    </section>
+
+  </main>
+
 </body>
 </html>
