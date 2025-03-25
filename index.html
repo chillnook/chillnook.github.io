@@ -31,6 +31,18 @@
       box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
     }
 
+    .game-card {
+      background-color: #472110;
+      border: 1px solid #2c1b12;
+      box-shadow: 0 5px 20px rgba(0, 0, 0, 0.4);
+      transition: transform 0.2s ease, box-shadow 0.2s ease;
+    }
+
+    .game-card:hover {
+      transform: translateY(-4px);
+      box-shadow: 0 8px 25px rgba(0, 0, 0, 0.5);
+    }
+
     .status-open {
       background-color: #0f5132;
       color: #d1fae5;
@@ -80,7 +92,6 @@
       <h3 class="text-4xl font-bold text-center text-[#EDBD25]">Projects I've Built</h3>
       <div class="grid md:grid-cols-3 gap-14">
 
-        <!-- Card Template -->
         <div class="rounded-xl p-8 card-bg flex flex-col justify-between items-center text-center space-y-6 h-full">
           <h4 class="text-xl font-semibold text-[#EDBD25]">Leaderboard System</h4>
           <p class="text-gray-300 text-sm">Real-time leaderboard tracking player stats like cash, kills, or scores.</p>
@@ -108,7 +119,8 @@
             <source src="adminpanel-demo.mp4" type="video/mp4">
             Your browser does not support the video tag.
           </video>
-          <a href="https://www.roblox.com/games/101073218853752/Admin-Panel-Portfolio" class="solid-button px-4 py-2 rounded-md inline-block">View Demo</a>
+          <a href="https://www.roblox.com/games/101073218853752/Admin-Panel-Portfolio"
+            class="solid-button px-4 py-2 rounded-md inline-block">View Demo</a>
         </div>
 
         <div class="rounded-xl p-8 card-bg flex flex-col justify-between items-center text-center space-y-6 h-full">
@@ -134,13 +146,14 @@
 
         <div class="rounded-xl p-8 card-bg flex flex-col justify-between items-center text-center space-y-6 h-full">
           <h4 class="text-xl font-semibold text-[#EDBD25]">Shop System</h4>
-          <p class="text-gray-300 text-sm">Custom shop with categories, buy/sell options, and currency
+          <p class="text-gray-300 text-sm">Custom shop with categories and currency
             handling.</p>
           <video class="w-full rounded-md" controls>
             <source src="shopsystem-demo.mp4" type="video/mp4">
             Your browser does not support the video tag.
           </video>
-          <a href="https://www.roblox.com/games/133021823794239/Shop-System-Demo-Portfolio" class="solid-button px-4 py-2 rounded-md inline-block">View Demo</a>
+          <a href="https://www.roblox.com/games/133021823794239/Shop-System-Demo-Portfolio"
+            class="solid-button px-4 py-2 rounded-md inline-block">View Demo</a>
         </div>
 
         <div class="rounded-xl p-8 card-bg flex flex-col justify-between items-center text-center space-y-6 h-full">
@@ -165,12 +178,36 @@
 
         <div class="rounded-xl p-8 card-bg flex flex-col justify-between items-center text-center space-y-6 h-full">
           <h4 class="text-xl font-semibold text-[#EDBD25]">Quest and Dialogue System</h4>
-          <p class="text-gray-300 text-sm">Multi-step quests with acceptance, tracking, and completion. Built along with a dialogue system.</p>
+          <p class="text-gray-300 text-sm">Multi-step quests with acceptance, tracking, and completion. Built along with
+            a dialogue system.</p>
           <video class="w-full rounded-md" controls>
             <source src="questsystem-demo.mp4" type="video/mp4">
             Your browser does not support the video tag.
           </video>
-          <a href="https://www.roblox.com/games/118643743796172/Quest-System-Demo-Portfolio" class="solid-button px-4 py-2 rounded-md inline-block">View Demo</a>
+          <a href="https://www.roblox.com/games/118643743796172/Quest-System-Demo-Portfolio"
+            class="solid-button px-4 py-2 rounded-md inline-block">View Demo</a>
+        </div>
+      </div>
+    </section>
+
+    <section id="games" class="space-y-20">
+      <h3 class="text-4xl font-bold text-center text-[#EDBD25]">Games I've Worked On</h3>
+      <div class="flex flex-wrap justify-center gap-10">
+
+        <div class="w-full sm:w-64 rounded-xl p-5 game-card text-center flex flex-col items-center space-y-4">
+          <img src="https://tr.rbxcdn.com/180DAY-a9d98dc8dfc0478eec706ec170b05fc9/150/150/Image/Webp/noFilter"
+            alt="Game Thumbnail" class="rounded-md w-[150px] h-[150px] object-cover shadow">
+          <h4 class="text-lg font-semibold text-[#EDBD25]">Epblox | Theme Park</h4>
+          <a href="https://www.roblox.com/games/4502575730/Epblox-Theme-Park" target="_blank"
+            class="solid-button px-4 py-2 rounded-md inline-block hover:brightness-110 transition">Visit Game</a>
+        </div>
+
+        <div class="w-full sm:w-64 rounded-xl p-5 game-card text-center flex flex-col items-center space-y-4">
+          <img src="https://tr.rbxcdn.com/180DAY-35229efb934d9077140db95a77d7e860/150/150/Image/Webp/noFilter"
+            alt="Game Thumbnail" class="rounded-md w-[150px] h-[150px] object-cover shadow">
+          <h4 class="text-lg font-semibold text-[#EDBD25]">Summer Hotels</h4>
+          <a href="https://www.roblox.com/games/4544856695/Work-at-a-Hotel-Summer-Hotels-Resort-Spa" target="_blank"
+            class="solid-button px-4 py-2 rounded-md inline-block hover:brightness-110 transition">Visit Game</a>
         </div>
       </div>
     </section>
@@ -195,6 +232,33 @@
           <h4 class="text-xl font-semibold mb-4">Bug Fixing & Debugging 🐞</h4>
           <p class="text-gray-300 text-sm">Stuck with persistent bugs or weird behavior? I’ll troubleshoot,
             clean up, and make sure everything runs smooth and error-free.</p>
+        </div>
+      </div>
+    </section>
+
+    <section id="clients" class="text-center space-y-10">
+      <h3 class="text-4xl font-bold text-[#EDBD25]">Who I've Worked With</h3>
+      <div class="text-lg text-gray-300">I've had the pleasure of collaborating with creators and groups, including:
+      </div>
+      <div class="flex justify-center items-center gap-6 flex-wrap">
+        <div class="bg-[#472110] border border-[#2c1b12] p-6 rounded-lg text-center max-w-md shadow text-gray-200">
+          <h4 class="text-xl font-semibold text-[#EDBD25] mb-2">Caylus (YouTuber)</h4>
+          <p class="text-sm mb-4">I created a GTA 5 script where the player must manually blink and breathe to survive.
+          </p>
+          <a href="https://youtu.be/YqBVO6wYl_E?si=Z6a9e0tY_7fH8PUk" target="_blank">
+            <img src="caylus-thumbnail.jpg" alt="Caylus Video Thumbnail"
+              class="rounded-md shadow-md w-full max-w-sm mx-auto mb-4 hover:opacity-90 transition">
+          </a>
+          <div class="flex justify-center flex-wrap gap-3 mt-2">
+            <a href="https://www.youtube.com/@Caylus" target="_blank"
+              class="solid-button px-4 py-2 rounded-md hover:bg-[#EDBD25] hover:text-[#1b0402] transition font-medium">
+              Channel
+            </a>
+            <a href="https://youtu.be/YqBVO6wYl_E?si=Z6a9e0tY_7fH8PUk" target="_blank"
+              class="solid-button px-4 py-2 rounded-md hover:bg-[#EDBD25] hover:text-[#1b0402] transition font-medium">
+              Watch Video
+            </a>
+          </div>
         </div>
       </div>
     </section>
