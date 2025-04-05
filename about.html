@@ -1,0 +1,181 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>About Me | ChillNook</title>
+  <link rel="icon" href="favicon.png" type="image/x-icon">
+
+  <!-- Tailwind CSS -->
+  <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet"/>
+
+  <style>
+    /* Match the same styles from your main page */
+    body {
+      font-family: 'Inter', sans-serif;
+      background-color: #f8fafc; /* same as main site */
+      color: #1f2937;           /* same text color as main site */
+    }
+
+    header {
+      position: sticky;
+      top: 0;
+      z-index: 50;
+      background-color: #ffffff;
+      border-bottom: 1px solid #e5e7eb;
+      box-shadow: 0 1px 4px rgba(0,0,0,0.05);
+    }
+
+    nav a {
+      color: #374151;
+      transition: color 0.2s;
+    }
+    nav a:hover {
+      color: #1d4ed8;
+    }
+
+    /* Outline style for buttons, consistent with your main site */
+    .solid-button {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      padding: 0.75rem 1rem;
+      border: 2px solid #1d4ed8;
+      background-color: transparent;
+      color: #1d4ed8;
+      font-weight: 600;
+      border-radius: 0.375rem;
+      transition: background-color 0.2s, color 0.2s;
+    }
+    .solid-button:hover {
+      background-color: #1d4ed8;
+      color: #ffffff;
+    }
+
+    .accent {
+      color: #1d4ed8;
+    }
+
+    /* Simple wave divider, if you want a visual break below the header. */
+    .wave-top {
+      position: relative;
+      margin-bottom: 2rem;
+    }
+    .wave-top svg {
+      display: block;
+      width: 100%;
+      height: 80px;
+      transform: rotate(180deg);
+    }
+
+    /* Headings */
+    h1, h2 {
+      color: #1f2937;
+    }
+  </style>
+</head>
+
+<body>
+
+  <!-- HEADER / NAV -->
+  <header class="py-4 px-6">
+    <div class="flex items-center justify-between max-w-7xl mx-auto">
+      <div class="text-lg font-bold uppercase tracking-wide text-gray-700">ChillNook</div>
+      <nav class="flex space-x-6 font-semibold uppercase text-sm">
+        <a href="index.html#projects">Projects</a>
+        <a href="index.html#services">Services</a>
+        <a href="index.html#faq">FAQ</a>
+        <span class="text-indigo-600">About</span>
+        <a href="index.html#contact">Contact</a>
+        <a href="terms.html">Terms</a>
+      </nav>
+    </div>
+  </header>
+
+  <!-- (Optional) wave divider below the header -->
+  <div class="wave-top">
+    <svg preserveAspectRatio="none" viewBox="0 0 1200 120" xmlns="http://www.w3.org/2000/svg">
+      <path
+        d="M851.14,59.28c59.28,0,117.15,3.13,176.05,7.3,65.7,4.73,131.71,10.41,197.09,3.13v78.15H0V55.4C153.76,71.62,312.78,110.66,479.63,102.67c95.25-4.13,188-30.24,283.31-42.07C788,58,819.73,59.28,851.14,59.28Z"
+        fill="#1d4ed8"
+      />
+    </svg>
+  </div>
+
+  <!-- MAIN CONTENT -->
+  <main class="max-w-7xl mx-auto px-6 py-10 space-y-16">
+
+    <!-- About Me Hero / Heading -->
+    <section class="space-y-4 text-center">
+      <h1 class="text-5xl font-extrabold text-gray-800">
+        About <span class="accent">Me</span>
+      </h1>
+      <p class="text-gray-600 max-w-3xl mx-auto text-lg leading-relaxed">
+        A peek into who I am, how I got here, and where I'm headed next.
+      </p>
+    </section>
+
+    <!-- About Me Content -->
+    <section class="space-y-6 text-gray-700 text-base leading-relaxed max-w-3xl mx-auto">
+      <p>
+        Hey! My name is Daxen (aka ChillNook) and I’m a 17-year-old developer from Canada.
+        I’ve been coding and programming for as long as I can remember. In 2016, I downloaded Pocket Code for
+        the first time, which was a mobile knockoff of Scratch. I remember creating various simple projects there, which took
+        up most of my time as a kid. I discovered I had an immense passion for creating and problem-solving, which led
+        to me finding other forms of development.
+      </p>
+
+      <p>
+        It wasn’t long after that I discovered Roblox. After learning how this new game worked and all of its mechanics,
+        I wanted to create my own game on this new platform. I started trying to make games (which admittedly, weren’t very good),
+        but through all that trial and error, it led to me becoming the proficient developer I am today. I’m not sure exactly
+        how or why I discovered Roblox, but I’m more than grateful that I did.
+      </p>
+
+      <p>
+        I’ve explored more platforms than Roblox over the years. I’ve experimented with Unity, GTA 5/FiveM modding,
+        website programming, Minecraft mod and plugin programming, Discord bot programming, and more.
+        I’m experienced in Lua, C#, C++, Java, and JavaScript outside of Roblox, and love programming in every one of them.
+      </p>
+
+      <p>
+        I’ve worked on many projects over the years, none of which have ever really taken off, but some that I am most proud of
+        include Summer Hotels, Sword Fight Simulator, and a new game I’m working on called Party Games. Outside of Roblox, I am
+        also very proud of my Uber Driver Mod for GTA 5, which has gained a decent amount of traction and led me to work with a
+        very big name in the gaming community!
+      </p>
+
+      <p>
+        When it comes to my coding approach, I love finding the most efficient way to do things. I will work on something
+        until I can solve it! (I’ve never been one to take many breaks, which has its pros and cons.) If something I make isn’t good enough,
+        I will keep trying, or even start from scratch to ensure the best result that I can be proud of.
+      </p>
+
+      <p>
+        Outside of the whole programming side of myself, I am very into creating and playing music, mechanical work, and anything hands-on.
+        I find all of these things really fun and another way to spend my free time. In addition to my passion for creating, hands-on work
+        has always been another passion of mine, as I love fixing stuff and improving upon what’s already been done.
+      </p>
+
+      <p>
+        In the future, I’m planning to have bigger, more complex projects on the go (when I can afford to), and even have ambitions of starting
+        my own business! In conclusion, my journey as a developer has been a fulfilling one, filled with exploration, learning, and creativity.
+        From my early days with Pocket Code to working on various platforms and languages, I’ve cultivated a diverse skill set and a love for
+        problem-solving. Each project, regardless of its success, has taught me valuable lessons and fueled my passion for development.
+      </p>
+
+      <p>
+        As I look to the future, I’m excited about the potential for more ambitious projects and the opportunity to turn my dreams into reality,
+        including the prospect of starting my own business. Programming, music, and hands-on work continue to inspire me, and I can’t wait to see
+        where this journey takes me next.
+      </p>
+    </section>
+  </main>
+
+  <!-- FOOTER -->
+  <footer class="py-6 text-center text-gray-500 text-sm">
+    &copy; 2025 Daxen. All rights reserved.
+  </footer>
+
+</body>
+</html>
