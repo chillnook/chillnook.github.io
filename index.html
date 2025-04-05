@@ -6,280 +6,453 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>ChillNook | Roblox Developer</title>
   <link rel="icon" href="favicon.png" type="image/x-icon">
+
+  <!-- Tailwind CSS -->
   <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+
+  <!-- Additional styles to further modernize and center elements -->
   <style>
     body {
       font-family: 'Inter', sans-serif;
-      background-color: #1b0402;
+      background-color: #f8fafc;
+      color: #1f2937;
+    }
+
+    header {
+      position: sticky;
+      top: 0;
+      z-index: 50;
+      background-color: #ffffff;
+      border-bottom: 1px solid #e5e7eb;
+      box-shadow: 0 1px 4px rgba(0, 0, 0, 0.05);
+    }
+
+    nav a {
+      color: #374151;
+      transition: color 0.2s;
+    }
+
+    nav a:hover {
+      color: #1d4ed8;
+    }
+
+    /* Modern outline style for the call-to-action buttons */
+    .solid-button {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      padding: 0.75rem 1rem;
+      border: 2px solid #1d4ed8;
+      /* Outline border */
+      background-color: transparent;
+      color: #1d4ed8;
+      font-weight: 600;
+      border-radius: 0.375rem;
+      transition: background-color 0.2s, color 0.2s;
+    }
+
+    .solid-button:hover {
+      background-color: #1d4ed8;
+      color: #ffffff;
     }
 
     .glow {
-      box-shadow: 0 0 15px rgba(237, 189, 37, 0.5);
+      box-shadow: 0 0 8px rgba(29, 78, 216, 0.3);
     }
 
-    .solid-header {
-      background-color: #472110;
+    .card {
+      background-color: #ffffff;
+      border: 1px solid #e5e7eb;
+      box-shadow: 0 2px 6px rgba(0, 0, 0, 0.05);
+      border-radius: 0.5rem;
+      transition: all 0.2s ease;
     }
 
-    .solid-button {
-      background-color: #DE8200;
-      color: #1b0402;
+    .card:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 6px 10px rgba(0, 0, 0, 0.08);
     }
 
-    .card-bg {
-      background-color: #472110;
-      border: 1px solid #2c1b12;
-      box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
+    .accent {
+      color: #1d4ed8;
     }
 
-    .game-card {
-      background-color: #472110;
-      border: 1px solid #2c1b12;
-      box-shadow: 0 5px 20px rgba(0, 0, 0, 0.4);
-      transition: transform 0.2s ease, box-shadow 0.2s ease;
-    }
-
-    .game-card:hover {
-      transform: translateY(-4px);
-      box-shadow: 0 8px 25px rgba(0, 0, 0, 0.5);
+    .section-box {
+      background-color: #ffffff;
+      border: 1px solid #e5e7eb;
+      border-radius: 0.5rem;
+      box-shadow: 0 2px 6px rgba(0, 0, 0, 0.04);
     }
 
     .status-open {
-      background-color: #0f5132;
-      color: #d1fae5;
+      background-color: #dcfce7;
+      color: #166534;
     }
 
     .status-busy {
-      background-color: #6c0a0a;
-      color: #ffe4e6;
+      background-color: #fee2e2;
+      color: #b91c1c;
     }
 
     .status-closed {
-      background-color: #374151;
-      color: #d1d5db;
+      background-color: #e2e8f0;
+      color: #475569;
+    }
+
+    .rotate-180 {
+      transform: rotate(180deg);
+    }
+
+    .wave-bottom {
+      position: relative;
+      margin-top: 2rem;
+    }
+
+    .wave-bottom svg {
+      display: block;
+      width: 100%;
+      height: 80px;
+    }
+
+    .wave-top {
+      position: relative;
+      margin-bottom: 2rem;
+    }
+
+    .wave-top svg {
+      display: block;
+      width: 100%;
+      height: 80px;
+      transform: rotate(180deg);
     }
   </style>
 </head>
 
-<body class="text-gray-100">
-
-  <header
-    class="solid-header p-6 flex flex-col md:flex-row justify-between items-center w-full shadow-lg text-center md:text-left space-y-4 md:space-y-0">
-
-    <nav
-      class="flex flex-col md:flex-row justify-center w-full space-y-2 md:space-y-0 md:space-x-8 text-gray-300 font-semibold uppercase tracking-wide items-center">
-      <a href="#projects" class="hover:text-[#EDBD25] transition duration-200">Projects</a>
-      <a href="#services" class="hover:text-[#EDBD25]">Services</a>
-      <a href="#contact" class="hover:text-[#EDBD25]">Contact</a>
-      <a href="terms.html" class="hover:text-[#EDBD25]">Terms</a>
-    </nav>
+<body>
+  <!-- NAVIGATION / HEADER -->
+  <header class="py-4 px-6">
+    <div class="flex items-center justify-between max-w-7xl mx-auto">
+      <div class="text-lg font-bold uppercase tracking-wide text-gray-700">ChillNook</div>
+      <!-- Navigation now includes an 'About' link pointing to 'about.html' -->
+      <nav class="flex space-x-6 font-semibold uppercase text-sm">
+        <a href="#projects">Projects</a>
+        <a href="#services">Services</a>
+        <a href="#faq">FAQ</a>
+        <a href="about.html">About</a>
+        <a href="#contact">Contact</a>
+        <a href="terms.html">Terms</a>
+      </nav>
+    </div>
   </header>
 
-  <main class="w-full max-w-7xl mx-auto px-6 py-16 space-y-32">
+  <main class="max-w-7xl mx-auto px-6 py-10 space-y-16">
 
-    <section class="text-center space-y-8">
-      <h2 class="text-6xl font-extrabold text-white">
-        Hey, I'm <span style="color: #EDBD25;">chillnook</span>
-      </h2>
-      <p class="text-lg text-gray-300 max-w-3xl mx-auto">I create clean and powerful Roblox systems and scripts
-        that are built to perform. Let your game stand out with optimized and efficient solutions that really
-        enhance the player experience!</p>
-      <a href="#contact"
-        class="solid-button px-10 py-4 rounded-full hover:bg-[#EDBD25] hover:text-[#1b0402] glow transition font-semibold inline-block">Work
-        with Me</a>
+    <!-- HERO SECTION -->
+    <section class="flex flex-col md:flex-row md:items-center md:space-x-8 space-y-8 md:space-y-0">
+      <div class="flex-1 space-y-6 text-center md:text-left">
+        <h2 class="text-5xl md:text-6xl font-extrabold text-gray-800 leading-tight">
+          Hey, I'm <span class="accent">chillnook</span>
+        </h2>
+        <p class="text-lg text-gray-600 max-w-xl leading-relaxed mx-auto md:mx-0">
+          I create clean and powerful Roblox systems and scripts that are built to perform. Let your game stand out with
+          optimized and efficient solutions that really enhance the player experience!
+        </p>
+        <div>
+          <a href="#contact" class="solid-button glow rounded-full text-base">
+            Work with Me
+          </a>
+        </div>
+      </div>
+      <!-- Right-side image/graphic -->
+      <div class="flex-1 hidden md:block">
+        <img src="https://pbs.twimg.com/profile_images/1813703999507361792/C6qnwwx6_400x400.jpg" alt="Placeholder"
+          class="mx-auto rounded shadow md:mt-0" />
+      </div>
     </section>
 
-    <section id="projects" class="space-y-20">
-      <h3 class="text-4xl font-bold text-center text-[#EDBD25]">Projects I've Built</h3>
-      <div class="grid md:grid-cols-3 gap-14">
+    <!-- Wave divider below the hero -->
+    <div class="wave-bottom">
+      <svg preserveAspectRatio="none" viewBox="0 0 1200 120" xmlns="http://www.w3.org/2000/svg">
+        <path
+          d="M321.39,56.61c58.53,0,114.87,2.49,172-1.07,83.34-5.29,167.18-21.63,250.56-26.9,86.92-5.62,175.56,1.15,259.47,19.32,25.86,5.91,51.64,13.33,77.24,20.46v85.58H0V95.54C94.57,75.25,188.33,56.61,321.39,56.61Z"
+          opacity=".25" fill="#1d4ed8"></path>
+        <path
+          d="M851.14,104.28c59.28,0,117.15-3.13,176.05-7.3,65.7-4.73,131.71-10.41,197.09-3.13v78.15H0V108.16C153.76,91.94,312.78,52.9,479.63,60.89c95.25,4.13,188,30.24,283.31,42.07C788,107.47,819.73,104.28,851.14,104.28Z"
+          opacity=".5" fill="#1d4ed8"></path>
+        <path
+          d="M851.14,59.28c59.28,0,117.15,3.13,176.05,7.3,65.7,4.73,131.71,10.41,197.09,3.13v78.15H0V55.4C153.76,71.62,312.78,110.66,479.63,102.67c95.25-4.13,188-30.24,283.31-42.07C788,58,819.73,59.28,851.14,59.28Z"
+          fill="#1d4ed8"></path>
+      </svg>
+    </div>
 
-        <div class="rounded-xl p-8 card-bg flex flex-col justify-between items-center text-center space-y-6 h-full">
-          <h4 class="text-xl font-semibold text-[#EDBD25]">Leaderboard System</h4>
-          <p class="text-gray-300 text-sm">Global leaderboard tracking with player stats, working alongside DataStore or
-            DataStore2 to save and load values.</p>
-          <iframe class="w-full aspect-video rounded-md shadow-md"
+    <!-- PROJECTS -->
+    <section id="projects" class="space-y-8">
+      <div>
+        <h3 class="text-4xl font-bold accent text-center">Projects I've Built</h3>
+        <p class="text-center text-gray-600 max-w-2xl mx-auto mt-2">
+          Below are some of my core systems and demos showcasing the variety of features I can build.
+        </p>
+      </div>
+
+      <!-- Project feature layout -->
+      <div class="space-y-12">
+        <!-- 1: Leaderboard System -->
+        <div class="card p-6 flex flex-col md:flex-row items-center md:space-x-6 space-y-6 md:space-y-0">
+          <iframe class="md:w-1/2 w-full aspect-video rounded-md"
             src="https://www.youtube.com/embed/Y_vVhnNO-w8?modestbranding=1&rel=0&showinfo=0"
             title="Leaderboard System Demo" frameborder="0"
             allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
-            allowfullscreen>
-          </iframe>
-          <a href="https://www.roblox.com/games/127523872917789/DataStore2-Demo-Portfolio"
-            class="solid-button px-4 py-2 rounded-md inline-block">View Demo</a>
+            allowfullscreen></iframe>
+          <div class="md:w-1/2 space-y-3">
+            <h4 class="text-xl font-semibold accent">Leaderboard System</h4>
+            <p class="text-gray-600 text-sm">
+              Global leaderboard tracking with player stats, working alongside DataStore or DataStore2 to save and load
+              values.
+            </p>
+            <a href="https://www.roblox.com/games/127523872917789/DataStore2-Demo-Portfolio"
+              class="solid-button text-sm inline-flex">
+              View Demo
+            </a>
+          </div>
         </div>
 
-        <div class="rounded-xl p-8 card-bg flex flex-col justify-between items-center text-center space-y-6 h-full">
-          <h4 class="text-xl font-semibold text-[#EDBD25]">Procedural Terrain Generator</h4>
-          <p class="text-gray-300 text-sm">Chunk-based terrain system with dynamic chunks, rivers, lakes, ponds, trees
-            and different biomes and unique terrain chunks.</p>
-          <iframe class="w-full aspect-video rounded-md" src="https://www.youtube.com/embed/K596-S8zKZg"
+        <!-- 2: Procedural Terrain Generator -->
+        <div class="card p-6 flex flex-col md:flex-row items-center md:space-x-6 space-y-6 md:space-y-0">
+          <iframe class="md:w-1/2 w-full aspect-video rounded-md" src="https://www.youtube.com/embed/K596-S8zKZg"
             title="Procedural Terrain Demo" frameborder="0"
             allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
-            allowfullscreen>
-          </iframe>
-          <a href="https://www.roblox.com/games/87577077508087/Procedural-Terrain-Generation-Demo-Portfolio"
-            class="solid-button px-4 py-2 rounded-md inline-block">View Demo</a>
+            allowfullscreen></iframe>
+          <div class="md:w-1/2 space-y-3">
+            <h4 class="text-xl font-semibold accent">Procedural Terrain Generator</h4>
+            <p class="text-gray-600 text-sm">
+              Chunk-based terrain system with dynamic chunks, rivers, lakes, ponds, trees, and different biomes.
+            </p>
+            <a href="https://www.roblox.com/games/87577077508087/Procedural-Terrain-Generation-Demo-Portfolio"
+              class="solid-button text-sm inline-flex">
+              View Demo
+            </a>
+          </div>
         </div>
 
-        <div class="rounded-xl p-8 card-bg flex flex-col justify-between items-center text-center space-y-6 h-full">
-          <h4 class="text-xl font-semibold text-[#EDBD25]">Custom Admin Panel</h4>
-          <p class="text-gray-300 text-sm">Admin panel with permissions, UI, and command support.</p>
-          <iframe class="w-full aspect-video rounded-md shadow-md"
+        <!-- 3: Custom Admin Panel -->
+        <div class="card p-6 flex flex-col md:flex-row items-center md:space-x-6 space-y-6 md:space-y-0">
+          <iframe class="md:w-1/2 w-full aspect-video rounded-md"
             src="https://www.youtube.com/embed/UpGJBr7ilrs?modestbranding=1&rel=0&showinfo=0"
             title="Custom Admin Panel Demo" frameborder="0"
             allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
-            allowfullscreen>
-          </iframe>
-          <a href="https://www.roblox.com/games/101073218853752/Admin-Panel-Portfolio"
-            class="solid-button px-4 py-2 rounded-md inline-block">View Demo</a>
+            allowfullscreen></iframe>
+          <div class="md:w-1/2 space-y-3">
+            <h4 class="text-xl font-semibold accent">Custom Admin Panel</h4>
+            <p class="text-gray-600 text-sm">
+              Admin panel with permissions, UI, and command support.
+            </p>
+            <a href="https://www.roblox.com/games/101073218853752/Admin-Panel-Portfolio"
+              class="solid-button text-sm inline-flex">
+              View Demo
+            </a>
+          </div>
         </div>
 
-        <div class="rounded-xl p-8 card-bg flex flex-col justify-between items-center text-center space-y-6 h-full">
-          <h4 class="text-xl font-semibold text-[#EDBD25]">Skill and Leveling System</h4>
-          <p class="text-gray-300 text-sm">Progression system where players gain experience, level up, and unlock new
-            abilities.</p>
-          <iframe class="w-full aspect-video rounded-md shadow-md"
+        <!-- 4: Skill and Leveling System -->
+        <div class="card p-6 flex flex-col md:flex-row items-center md:space-x-6 space-y-6 md:space-y-0">
+          <iframe class="md:w-1/2 w-full aspect-video rounded-md"
             src="https://www.youtube.com/embed/W7i-4xX8isw?modestbranding=1&rel=0&showinfo=0"
             title="Skill and Leveling System Demo" frameborder="0"
             allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
-            allowfullscreen>
-          </iframe>
-          <a href="https://www.roblox.com/games/80148780127917/Skill-and-Levelling-System-Demo-Portfolio"
-            class="solid-button px-4 py-2 rounded-md inline-block">
-            View Demo
-          </a>
+            allowfullscreen></iframe>
+          <div class="md:w-1/2 space-y-3">
+            <h4 class="text-xl font-semibold accent">Skill and Leveling System</h4>
+            <p class="text-gray-600 text-sm">
+              Progression system where players gain experience, level up, and unlock new abilities.
+            </p>
+            <a href="https://www.roblox.com/games/80148780127917/Skill-and-Levelling-System-Demo-Portfolio"
+              class="solid-button text-sm inline-flex">
+              View Demo
+            </a>
+          </div>
         </div>
 
-        <div class="rounded-xl p-8 card-bg flex flex-col justify-between items-center text-center space-y-6 h-full">
-          <h4 class="text-xl font-semibold text-[#EDBD25]">Shop System</h4>
-          <p class="text-gray-300 text-sm">Custom shop with categories and currency handling.</p>
-          <iframe class="w-full aspect-video rounded-md shadow-md"
+        <!-- 5: Shop System -->
+        <div class="card p-6 flex flex-col md:flex-row items-center md:space-x-6 space-y-6 md:space-y-0">
+          <iframe class="md:w-1/2 w-full aspect-video rounded-md"
             src="https://www.youtube.com/embed/w2S1vSrXRew?modestbranding=1&rel=0&showinfo=0" title="Shop System Demo"
             frameborder="0"
             allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
-            allowfullscreen>
-          </iframe>
-          <a href="https://www.roblox.com/games/133021823794239/Shop-System-Demo-Portfolio"
-            class="solid-button px-4 py-2 rounded-md inline-block">View Demo</a>
+            allowfullscreen></iframe>
+          <div class="md:w-1/2 space-y-3">
+            <h4 class="text-xl font-semibold accent">Shop System</h4>
+            <p class="text-gray-600 text-sm">
+              Custom shop with categories and currency handling.
+            </p>
+            <a href="https://www.roblox.com/games/133021823794239/Shop-System-Demo-Portfolio"
+              class="solid-button text-sm inline-flex">
+              View Demo
+            </a>
+          </div>
         </div>
 
-        <div class="rounded-xl p-8 card-bg flex flex-col justify-between items-center text-center space-y-6 h-full">
-          <h4 class="text-xl font-semibold text-[#EDBD25]">Combat System</h4>
-          <p class="text-gray-300 text-sm">Combat system with animated punching, stamina management, hit effects, and
-            dynamic NPC AI.</p>
-          <iframe class="w-full aspect-video rounded-md shadow-md"
+        <!-- 6: Combat System -->
+        <div class="card p-6 flex flex-col md:flex-row items-center md:space-x-6 space-y-6 md:space-y-0">
+          <iframe class="md:w-1/2 w-full aspect-video rounded-md"
             src="https://www.youtube.com/embed/GTfa4CYgXUw?modestbranding=1&rel=0&showinfo=0" title="Combat System Demo"
             frameborder="0"
             allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
-            allowfullscreen>
-          </iframe>
-          <a href="https://www.roblox.com/games/139794887376820/Combat-System-Demo-Portfolio"
-            class="solid-button px-4 py-2 rounded-md inline-block">View Demo</a>
+            allowfullscreen></iframe>
+          <div class="md:w-1/2 space-y-3">
+            <h4 class="text-xl font-semibold accent">Combat System</h4>
+            <p class="text-gray-600 text-sm">
+              Combat system with animated punching, stamina management, hit effects, and dynamic NPC AI.
+            </p>
+            <a href="https://www.roblox.com/games/139794887376820/Combat-System-Demo-Portfolio"
+              class="solid-button text-sm inline-flex">
+              View Demo
+            </a>
+          </div>
         </div>
 
-        <div class="rounded-xl p-8 card-bg flex flex-col justify-between items-center text-center space-y-6 h-full">
-          <h4 class="text-xl font-semibold text-[#EDBD25]">Quest and Dialogue System</h4>
-          <p class="text-gray-300 text-sm">Multi-step quests with acceptance, tracking, and completion. Built along with
-            a dialogue system.</p>
-          <iframe class="w-full aspect-video rounded-md shadow-md"
+        <!-- 7: Quest and Dialogue System -->
+        <div class="card p-6 flex flex-col md:flex-row items-center md:space-x-6 space-y-6 md:space-y-0">
+          <iframe class="md:w-1/2 w-full aspect-video rounded-md"
             src="https://www.youtube.com/embed/v9B1NnZJ6h0?modestbranding=1&rel=0&showinfo=0"
             title="Quest and Dialogue System Demo" frameborder="0"
             allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
-            allowfullscreen>
-          </iframe>
-          <a href="https://www.roblox.com/games/118643743796172/Quest-System-Demo-Portfolio"
-            class="solid-button px-4 py-2 rounded-md inline-block">View Demo</a>
+            allowfullscreen></iframe>
+          <div class="md:w-1/2 space-y-3">
+            <h4 class="text-xl font-semibold accent">Quest and Dialogue System</h4>
+            <p class="text-gray-600 text-sm">
+              Multi-step quests with acceptance, tracking, and completion. Built along with a dialogue system.
+            </p>
+            <a href="https://www.roblox.com/games/118643743796172/Quest-System-Demo-Portfolio"
+              class="solid-button text-sm inline-flex">
+              View Demo
+            </a>
+          </div>
         </div>
 
-        <div class="rounded-xl p-8 card-bg flex flex-col justify-between items-center text-center space-y-6 h-full">
-          <h4 class="text-xl font-semibold text-[#EDBD25]">Building System</h4>
-          <p class="text-gray-300 text-sm">Manages part placement, deletion, rotation, and includes a clear-all feature with sound and fade-out animations.</p>
-          <iframe class="w-full aspect-video rounded-md shadow-md"
+        <!-- 8: Building System -->
+        <div class="card p-6 flex flex-col md:flex-row items-center md:space-x-6 space-y-6 md:space-y-0">
+          <iframe class="md:w-1/2 w-full aspect-video rounded-md"
             src="https://www.youtube.com/embed/Teu6UXVrNRw?modestbranding=1&rel=0&showinfo=0"
             title="Quest and Dialogue System Demo" frameborder="0"
             allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
-            allowfullscreen>
-          </iframe>
-          <a href="https://www.roblox.com/games/87045566109711/Part-Building-System-Demo"
-            class="solid-button px-4 py-2 rounded-md inline-block">View Demo</a>
+            allowfullscreen></iframe>
+          <div class="md:w-1/2 space-y-3">
+            <h4 class="text-xl font-semibold accent">Building System</h4>
+            <p class="text-gray-600 text-sm">
+              Manages part placement, deletion, rotation, plus a clear-all feature with sound and fade-out animations.
+            </p>
+            <a href="https://www.roblox.com/games/87045566109711/Part-Building-System-Demo"
+              class="solid-button text-sm inline-flex">
+              View Demo
+            </a>
+          </div>
         </div>
 
-        <div class="rounded-xl p-8 card-bg flex flex-col justify-between items-center text-center space-y-6 h-full">
-          <h4 class="text-xl font-semibold text-[#EDBD25]">Pet System (COMING SOON)</h4>
-          <p class="text-gray-300 text-sm">Pet following system with attachment and upgrades.</p>
-          <video class="w-full rounded-md" controls>
-            <source src="leaderboard-demo.mp4" type="video/mp4">
-            Your browser does not support the video tag.
-          </video>
-          <a href="#" class="solid-button px-4 py-2 rounded-md inline-block">View Demo</a>
-        </div>
+        <!-- 9: Pet System (COMING SOON) -->
+        <!-- Omitted from the page for now, but you can re-enable if you’d like:
+             <div class="card p-6 flex flex-col md:flex-row items-center md:space-x-6 space-y-6 md:space-y-0">
+               ...
+             </div>
+        -->
       </div>
     </section>
-    <section id="games" class="space-y-20">
-      <h3 class="text-4xl font-bold text-center text-[#EDBD25]">Games I've Worked On</h3>
-      <div class="flex flex-wrap justify-center gap-10">
 
-        <div class="w-full sm:w-64 rounded-xl p-5 game-card text-center flex flex-col items-center space-y-4">
+    <!-- wave divider above games section -->
+    <div class="wave-top">
+      <svg preserveAspectRatio="none" viewBox="0 0 1200 120" xmlns="http://www.w3.org/2000/svg">
+        <path
+          d="M851.14,59.28c59.28,0,117.15,3.13,176.05,7.3,65.7,4.73,131.71,10.41,197.09,3.13v78.15H0V55.4C153.76,71.62,312.78,110.66,479.63,102.67c95.25-4.13,188-30.24,283.31-42.07C788,58,819.73,59.28,851.14,59.28Z"
+          fill="#1d4ed8"></path>
+      </svg>
+    </div>
+
+    <!-- GAMES (still exists, just not in the nav) -->
+    <section id="games" class="space-y-8 bg-gray-50 py-10 rounded">
+      <div>
+        <h3 class="text-4xl font-bold accent text-center">Games I've Worked On</h3>
+        <p class="text-center text-gray-600 max-w-2xl mx-auto mt-2">
+          Here are a few Roblox experiences I contributed to.
+        </p>
+      </div>
+      <div class="flex flex-wrap justify-center gap-6">
+        <!-- Epblox -->
+        <div class="card p-5 text-center flex flex-col items-center space-y-4 w-64">
           <img src="https://tr.rbxcdn.com/180DAY-a9d98dc8dfc0478eec706ec170b05fc9/150/150/Image/Webp/noFilter"
-            alt="Game Thumbnail" class="rounded-md w-[150px] h-[150px] object-cover shadow">
-          <h4 class="text-lg font-semibold text-[#EDBD25]">Epblox | Theme Park</h4>
+            alt="Game Thumbnail" class="rounded-md w-[150px] h-[150px] object-cover">
+          <h4 class="text-lg font-semibold accent">Epblox | Theme Park</h4>
           <a href="https://www.roblox.com/games/4502575730/Epblox-Theme-Park" target="_blank"
-            class="solid-button px-4 py-2 rounded-md inline-block hover:brightness-110 transition">Visit Game</a>
+            class="solid-button text-sm inline-flex mx-auto">
+            Visit Game
+          </a>
         </div>
 
-        <div class="w-full sm:w-64 rounded-xl p-5 game-card text-center flex flex-col items-center space-y-4">
+        <!-- Summer Hotels -->
+        <div class="card p-5 text-center flex flex-col items-center space-y-4 w-64">
           <img src="https://tr.rbxcdn.com/180DAY-35229efb934d9077140db95a77d7e860/150/150/Image/Webp/noFilter"
-            alt="Game Thumbnail" class="rounded-md w-[150px] h-[150px] object-cover shadow">
-          <h4 class="text-lg font-semibold text-[#EDBD25]">Summer Hotels</h4>
+            alt="Game Thumbnail" class="rounded-md w-[150px] h-[150px] object-cover">
+          <h4 class="text-lg font-semibold accent">Summer Hotels</h4>
           <a href="https://www.roblox.com/games/4544856695/Work-at-a-Hotel-Summer-Hotels-Resort-Spa" target="_blank"
-            class="solid-button px-4 py-2 rounded-md inline-block hover:brightness-110 transition">Visit Game</a>
+            class="solid-button text-sm inline-flex mx-auto">
+            Visit Game
+          </a>
         </div>
       </div>
     </section>
 
-    <section id="services" class="space-y-20">
-      <h3 class="text-4xl font-bold text-center text-[#EDBD25]">What I Offer</h3>
-      <div class="grid md:grid-cols-3 gap-10">
-
-        <div class="rounded-xl p-8 card-bg">
-          <h4 class="text-xl font-semibold mb-4">Custom Systems 💡</h4>
-          <p class="text-gray-300 text-sm">Need combat systems, quest frameworks, shops, or something entirely
-            unique? I design clean, reliable systems tailored specifically for your game's needs.</p>
+    <!-- SERVICES (still in the page, not changed) -->
+    <section id="services" class="section-box p-8 space-y-8">
+      <h3 class="text-3xl font-bold accent text-center">What I Offer</h3>
+      <div class="grid md:grid-cols-3 gap-6">
+        <div class="bg-white p-6 rounded shadow-sm hover:shadow md:transition md:transform md:hover:-translate-y-1">
+          <h4 class="text-xl font-semibold mb-2">Custom Systems 💡</h4>
+          <p class="text-gray-600 text-sm leading-relaxed">
+            Need combat systems, quest frameworks, shops, or something entirely unique?
+            I design clean, reliable systems tailored specifically for your game's needs.
+          </p>
         </div>
-
-        <div class="rounded-xl p-8 card-bg">
-          <h4 class="text-xl font-semibold mb-4">Optimization & Performance ⚙️</h4>
-          <p class="text-gray-300 text-sm">Lag-free, efficient scripting focused on smooth performance.
-            Whether you're scaling up or refining mechanics, I’ll make sure your game runs at its best.</p>
+        <div class="bg-white p-6 rounded shadow-sm hover:shadow md:transition md:transform md:hover:-translate-y-1">
+          <h4 class="text-xl font-semibold mb-2">Optimization & Performance ⚙️</h4>
+          <p class="text-gray-600 text-sm leading-relaxed">
+            Lag-free, efficient scripting focused on smooth performance.
+            Whether you're scaling up or refining mechanics, I’ll make sure your game runs at its best.
+          </p>
         </div>
-
-        <div class="rounded-xl p-8 card-bg">
-          <h4 class="text-xl font-semibold mb-4">Bug Fixing & Debugging 🐞</h4>
-          <p class="text-gray-300 text-sm">Stuck with persistent bugs or weird behavior? I’ll troubleshoot,
-            clean up, and make sure everything runs smooth and error-free.</p>
+        <div class="bg-white p-6 rounded shadow-sm hover:shadow md:transition md:transform md:hover:-translate-y-1">
+          <h4 class="text-xl font-semibold mb-2">Bug Fixing & Debugging 🐞</h4>
+          <p class="text-gray-600 text-sm leading-relaxed">
+            Stuck with persistent bugs or weird behavior? I’ll troubleshoot,
+            clean up, and ensure everything runs smoothly and error-free.
+          </p>
         </div>
       </div>
     </section>
 
-    <section id="clients" class="text-center space-y-10">
-      <h3 class="text-4xl font-bold text-[#EDBD25]">Who I've Worked With</h3>
-      <div class="text-lg text-gray-300">I've had the pleasure of collaborating with creators and groups, including:
+    <!-- CLIENTS (still present, not in the nav) -->
+    <section id="clients" class="space-y-8">
+      <div>
+        <h3 class="text-4xl font-bold accent text-center">Who I've Worked With</h3>
+        <p class="text-gray-600 text-center max-w-2xl mx-auto">
+          I've had the pleasure of collaborating with creators and groups, including:
+        </p>
       </div>
-      <div class="flex justify-center items-center gap-6 flex-wrap">
-        <div class="bg-[#472110] border border-[#2c1b12] p-6 rounded-lg text-center max-w-md shadow text-gray-200">
-          <h4 class="text-xl font-semibold text-[#EDBD25] mb-2">Caylus (YouTuber)</h4>
-          <p class="text-sm mb-4">I created a GTA 5 script where the player must manually blink and breathe to survive.
+      <div class="flex justify-center">
+        <!-- Add "text-center" here -->
+        <div class="card p-6 max-w-md w-full text-center">
+          <h4 class="text-xl font-semibold accent">Caylus</h4>
+          <p class="text-sm text-gray-600 mb-4">
+            I created a GTA 5 script where the player must manually blink and breathe to survive.
           </p>
           <a href="https://youtu.be/YqBVO6wYl_E?si=Z6a9e0tY_7fH8PUk" target="_blank">
             <img src="caylus-thumbnail.jpg" alt="Caylus Video Thumbnail"
-              class="rounded-md shadow-md w-full max-w-sm mx-auto mb-4 hover:opacity-90 transition">
+              class="rounded-md w-full max-w-sm mx-auto mb-4 hover:opacity-90 transition">
           </a>
-          <div class="flex justify-center flex-wrap gap-3 mt-2">
+          <div class="flex justify-center space-x-3">
             <a href="https://www.youtube.com/@Caylus" target="_blank"
-              class="solid-button px-4 py-2 rounded-md hover:bg-[#EDBD25] hover:text-[#1b0402] transition font-medium">
+              class="solid-button text-sm font-medium inline-flex">
               Channel
             </a>
             <a href="https://youtu.be/YqBVO6wYl_E?si=Z6a9e0tY_7fH8PUk" target="_blank"
-              class="solid-button px-4 py-2 rounded-md hover:bg-[#EDBD25] hover:text-[#1b0402] transition font-medium">
+              class="solid-button text-sm font-medium inline-flex">
               Watch Video
             </a>
           </div>
@@ -287,107 +460,131 @@
       </div>
     </section>
 
-    <section id="faq" class="text-center space-y-10">
-      <h3 class="text-4xl font-bold text-[#EDBD25]">FAQ</h3>
-      <div class="max-w-3xl mx-auto space-y-4">
-        <div class="border-b border-gray-700">
-          <button class="w-full flex justify-between items-center py-4 text-lg text-[#EDBD25] focus:outline-none"
+    <!-- FAQ (now in the nav) -->
+    <section id="faq" class="section-box p-8 space-y-8">
+      <h3 class="text-3xl font-bold accent text-center">FAQ</h3>
+      <div class="space-y-4 text-left">
+        <div class="border-b border-gray-200 pb-3">
+          <button class="w-full flex justify-between items-center text-base font-semibold accent"
             onclick="toggleFaq(this)">
-            Do you require an upfront payment?
-            <span class="transform transition-transform">▼</span>
+            <span>Do you require an upfront payment?</span>
+            <span class="arrow transform transition-transform">▼</span>
           </button>
-          <div class="hidden text-gray-300 text-sm pb-4 text-left">
-            For commissions, I typically take 25% upfront before starting the project to secure the work and
-            schedule.
+          <div class="hidden text-gray-600 text-sm pt-3">
+            For commissions, I typically take 25% upfront before starting the project to secure the work and schedule.
           </div>
         </div>
 
-        <div class="border-b border-gray-700">
-          <button class="w-full flex justify-between items-center py-4 text-lg text-[#EDBD25] focus:outline-none"
+        <div class="border-b border-gray-200 pb-3">
+          <button class="w-full flex justify-between items-center text-base font-semibold accent"
             onclick="toggleFaq(this)">
-            How long do projects take?
-            <span class="transform transition-transform">▼</span>
+            <span>How long do projects take?</span>
+            <span class="arrow transform transition-transform">▼</span>
           </button>
-          <div class="hidden text-gray-300 text-sm pb-4 text-left">
-            I’m happy to share that most systems are delivered within the agreed timeframe! I always include
-            some time for testing and polishing to ensure the results are the best they can be.
+          <div class="hidden text-gray-600 text-sm pt-3">
+            I’m happy to share that most systems are delivered within the agreed timeframe! I always include some time
+            for testing and polishing.
           </div>
         </div>
-        <div class="border-b border-gray-700">
-          <button class="w-full flex justify-between items-center py-4 text-lg text-[#EDBD25] focus:outline-none"
+
+        <div class="border-b border-gray-200 pb-3">
+          <button class="w-full flex justify-between items-center text-base font-semibold accent"
             onclick="toggleFaq(this)">
-            Do you offer revisions?
-            <span class="transform transition-transform">▼</span>
+            <span>Do you offer revisions?</span>
+            <span class="arrow transform transition-transform">▼</span>
           </button>
-          <div class="hidden text-gray-300 text-sm pb-4 text-left">
-            I’m glad to offer 2-3 revisions for free to make sure the final product really meets your
-            expectations!
+          <div class="hidden text-gray-600 text-sm pt-3">
+            I’m glad to offer 2-3 revisions for free to make sure the final product meets your expectations!
           </div>
         </div>
-        <div class="border-b border-gray-700">
-          <button class="w-full flex justify-between items-center py-4 text-lg text-[#EDBD25] focus:outline-none"
+
+        <div class="border-b border-gray-200 pb-3">
+          <button class="w-full flex justify-between items-center text-base font-semibold accent"
             onclick="toggleFaq(this)">
-            What payment methods do you accept?
-            <span class="transform transition-transform">▼</span>
+            <span>What payment methods do you accept?</span>
+            <span class="arrow transform transition-transform">▼</span>
           </button>
-          <div class="hidden text-gray-300 text-sm pb-4 text-left">
+          <div class="hidden text-gray-600 text-sm pt-3">
             Payments are discussed in USD or CAD and accepted via PayPal.
           </div>
         </div>
-        <div class="border-b border-gray-700">
-          <button class="w-full flex justify-between items-center py-4 text-lg text-[#EDBD25] focus:outline-none"
+
+        <div class="border-b border-gray-200 pb-3">
+          <button class="w-full flex justify-between items-center text-base font-semibold accent"
             onclick="toggleFaq(this)">
-            What’s your development process?
-            <span class="transform transition-transform">▼</span>
+            <span>What’s your development process?</span>
+            <span class="arrow transform transition-transform">▼</span>
           </button>
-          <div class="hidden text-gray-300 text-sm pb-4 text-left">
-            The process is straightforward: Inquiry → Quote → Development → Demo → Delivery. I’ll provide
-            regular updates throughout, ensuring you’re informed at every stage.
+          <div class="hidden text-gray-600 text-sm pt-3">
+            The process is straightforward: Inquiry → Quote → Development → Demo → Delivery. I’ll provide updates at
+            every stage.
           </div>
         </div>
       </div>
     </section>
 
-    <section id="contact" class="text-center space-y-10">
-      <h3 class="text-4xl font-bold text-[#EDBD25]">Get In Touch</h3>
-      <div class="flex justify-center items-center space-x-3">
-        <span class="font-semibold uppercase tracking-wide text-gray-300">Commission Status:</span>
-        <span id="status-indicator" class="px-4 py-2 rounded-full font-bold text-sm status-open">
+    <!-- REVIEWS (not in the nav, but still on page) -->
+    <section id="reviews" class="space-y-8">
+      <div>
+        <h3 class="text-4xl font-bold accent text-center">Reviews</h3>
+      </div>
+      <div class="flex justify-center">
+        <div class="card p-6 max-w-xl w-full">
+          <p class="text-gray-600 text-sm italic">
+            "The work was done incredibly fast, and there are no issues in the game now. Your service is excellent, and
+            I’ll be sure to reach out for future projects."
+          </p>
+          <p class="text-gray-800 text-sm mt-4 font-bold text-right">- ZeePlays2</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- CONTACT (in the nav) -->
+    <section id="contact" class="section-box p-8 space-y-4">
+      <h3 class="text-3xl font-bold accent text-center">Get In Touch</h3>
+      <div class="flex justify-center flex-col items-center space-y-2">
+        <span class="font-semibold uppercase tracking-wide text-gray-700">Commission Status:</span>
+        <span id="status-indicator" class="px-4 py-1 rounded-full font-bold text-sm status-open">
           Open
         </span>
       </div>
-      <p class="text-gray-300">Discord: <strong>chillnook</strong></p>
-      <p class="text-gray-300">Email: <strong>daxenbusiness@protonmail.com</strong></p>
-      <p class="text-sm text-gray-400">Let's make something awesome together.</p>
+      <p class="text-gray-700 text-sm text-center">
+        Discord: <strong>chillnook</strong>
+      </p>
+      <p class="text-gray-700 text-sm text-center">
+        Email: <strong>daxenbusiness@protonmail.com</strong>
+      </p>
+      <p class="text-gray-500 text-sm text-center">
+        Let's make something amazing together.
+      </p>
     </section>
-
-
-    <script>
-      function toggleFaq(button) {
-        const content = button.nextElementSibling;
-        const arrow = button.querySelector('span');
-        content.classList.toggle('hidden');
-        arrow.classList.toggle('rotate-180');
-      }
-
-      function setStatus(status) {
-        const statusEl = document.getElementById('status-indicator');
-        statusEl.classList.remove('status-open', 'status-busy', 'status-closed');
-        if (status === 'Open') {
-          statusEl.textContent = 'Open';
-          statusEl.classList.add('status-open');
-        } else if (status === 'Busy') {
-          statusEl.textContent = 'Busy';
-          statusEl.classList.add('status-busy');
-        } else if (status === 'Closed') {
-          statusEl.textContent = 'Closed';
-          statusEl.classList.add('status-closed');
-        }
-      }
-    </script>
 
   </main>
 
+  <script>
+    function toggleFaq(button) {
+      const content = button.nextElementSibling;
+      const arrow = button.querySelector('.arrow');
+      content.classList.toggle('hidden');
+      arrow.classList.toggle('rotate-180');
+    }
+
+    function setStatus(status) {
+      const statusEl = document.getElementById('status-indicator');
+      statusEl.classList.remove('status-open', 'status-busy', 'status-closed');
+
+      if (status === 'Open') {
+        statusEl.textContent = 'Open';
+        statusEl.classList.add('status-open');
+      } else if (status === 'Busy') {
+        statusEl.textContent = 'Busy';
+        statusEl.classList.add('status-busy');
+      } else if (status === 'Closed') {
+        statusEl.textContent = 'Closed';
+        statusEl.classList.add('status-closed');
+      }
+    }
+  </script>
 </body>
 
 </html>
