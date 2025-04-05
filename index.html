@@ -1,6 +1,5 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
@@ -14,12 +13,14 @@
   <style>
     body {
       font-family: 'Inter', sans-serif;
+      /* Hide horizontal overflow on mobile */
+      overflow-x: hidden;
       background-color: #f8fafc;
       color: #1f2937;
     }
 
     header {
-      position: sticky;
+      position: sticky; /* Keep your existing sticky if you want */
       top: 0;
       z-index: 50;
       background-color: #ffffff;
@@ -27,11 +28,12 @@
       box-shadow: 0 1px 4px rgba(0, 0, 0, 0.05);
     }
 
+    /* EXACT same color, text style as before for large screens, 
+       but we use flex-col on small screens (below md) to stack nav links. */
     nav a {
       color: #374151;
       transition: color 0.2s;
     }
-
     nav a:hover {
       color: #1d4ed8;
     }
@@ -43,7 +45,6 @@
       justify-content: center;
       padding: 0.75rem 1rem;
       border: 2px solid #1d4ed8;
-      /* Outline border */
       background-color: transparent;
       color: #1d4ed8;
       font-weight: 600;
@@ -67,7 +68,6 @@
       border-radius: 0.5rem;
       transition: all 0.2s ease;
     }
-
     .card:hover {
       transform: translateY(-2px);
       box-shadow: 0 6px 10px rgba(0, 0, 0, 0.08);
@@ -88,12 +88,10 @@
       background-color: #dcfce7;
       color: #166534;
     }
-
     .status-busy {
       background-color: #fee2e2;
       color: #b91c1c;
     }
-
     .status-closed {
       background-color: #e2e8f0;
       color: #475569;
@@ -107,7 +105,6 @@
       position: relative;
       margin-top: 2rem;
     }
-
     .wave-bottom svg {
       display: block;
       width: 100%;
@@ -118,7 +115,6 @@
       position: relative;
       margin-bottom: 2rem;
     }
-
     .wave-top svg {
       display: block;
       width: 100%;
@@ -129,22 +125,28 @@
 </head>
 
 <body>
-  <!-- NAVIGATION / HEADER -->
-  <header class="py-4 px-6">
-    <div class="flex items-center justify-between max-w-7xl mx-auto">
-      <div class="text-lg font-bold uppercase tracking-wide text-gray-700">ChillNook</div>
-      <!-- Navigation now includes an 'About' link pointing to 'about.html' -->
-      <nav class="flex space-x-6 font-semibold uppercase text-sm">
-        <a href="#projects">Projects</a>
-        <a href="#services">Services</a>
-        <a href="#faq">FAQ</a>
-        <a href="about.html">About</a>
-        <a href="#contact">Contact</a>
-        <a href="terms.html">Terms</a>
-      </nav>
-    </div>
-  </header>
 
+  <!-- NAVIGATION / HEADER (with brand left, links stacked on mobile, row on md+) -->
+  <header class="py-4 px-6 relative md:sticky md:top-0 z-50 bg-white border-b border-gray-200 shadow-sm">
+    <div class="max-w-7xl mx-auto">
+      <div class="flex flex-col md:flex-row items-center justify-between">
+        <!-- Brand Name: centered on mobile, left-aligned on md+ -->
+        <div class="text-lg font-bold uppercase tracking-wide text-gray-700 text-center md:text-left">
+          ChillNook
+        </div>
+        <!-- Navigation: stacked vertically on mobile, horizontal on md+ -->
+        <nav class="flex flex-col md:flex-row space-y-2 md:space-y-0 md:space-x-6 font-semibold uppercase text-sm text-center">
+          <a href="#projects">Projects</a>
+          <a href="#services">Services</a>
+          <a href="#faq">FAQ</a>
+          <a href="about.html">About</a>
+          <a href="#contact">Contact</a>
+          <a href="terms.html">Terms</a>
+        </nav>
+      </div>
+    </div>
+  </header>  
+  
   <main class="max-w-7xl mx-auto px-6 py-10 space-y-16">
 
     <!-- HERO SECTION -->
@@ -154,8 +156,8 @@
           Hey, I'm <span class="accent">chillnook</span>
         </h2>
         <p class="text-lg text-gray-600 max-w-xl leading-relaxed mx-auto md:mx-0">
-          I create clean and powerful Roblox systems and scripts that are built to perform. Let your game stand out with
-          optimized and efficient solutions that really enhance the player experience!
+          I create clean and powerful Roblox systems and scripts that are built to perform. 
+          Let your game stand out with optimized and efficient solutions that really enhance the player experience!
         </p>
         <div>
           <a href="#contact" class="solid-button glow rounded-full text-base">
@@ -165,8 +167,11 @@
       </div>
       <!-- Right-side image/graphic -->
       <div class="flex-1 hidden md:block">
-        <img src="https://pbs.twimg.com/profile_images/1813703999507361792/C6qnwwx6_400x400.jpg" alt="Placeholder"
-          class="mx-auto rounded shadow md:mt-0" />
+        <img
+          src="https://pbs.twimg.com/profile_images/1813703999507361792/C6qnwwx6_400x400.jpg"
+          alt="Placeholder"
+          class="mx-auto rounded shadow md:mt-0"
+        />
       </div>
     </section>
 
@@ -174,14 +179,27 @@
     <div class="wave-bottom">
       <svg preserveAspectRatio="none" viewBox="0 0 1200 120" xmlns="http://www.w3.org/2000/svg">
         <path
-          d="M321.39,56.61c58.53,0,114.87,2.49,172-1.07,83.34-5.29,167.18-21.63,250.56-26.9,86.92-5.62,175.56,1.15,259.47,19.32,25.86,5.91,51.64,13.33,77.24,20.46v85.58H0V95.54C94.57,75.25,188.33,56.61,321.39,56.61Z"
-          opacity=".25" fill="#1d4ed8"></path>
+          d="M321.39,56.61c58.53,0,114.87,2.49,172-1.07,
+             83.34-5.29,167.18-21.63,250.56-26.9,
+             86.92-5.62,175.56,1.15,259.47,19.32,
+             25.86,5.91,51.64,13.33,77.24,20.46v85.58H0V95.54C94.57,
+             75.25,188.33,56.61,321.39,56.61Z"
+          opacity=".25" fill="#1d4ed8"
+        ></path>
         <path
-          d="M851.14,104.28c59.28,0,117.15-3.13,176.05-7.3,65.7-4.73,131.71-10.41,197.09-3.13v78.15H0V108.16C153.76,91.94,312.78,52.9,479.63,60.89c95.25,4.13,188,30.24,283.31,42.07C788,107.47,819.73,104.28,851.14,104.28Z"
-          opacity=".5" fill="#1d4ed8"></path>
+          d="M851.14,104.28c59.28,0,117.15-3.13,176.05-7.3,
+             65.7-4.73,131.71-10.41,197.09-3.13v78.15H0V108.16C153.76,
+             91.94,312.78,52.9,479.63,60.89c95.25,4.13,
+             188,30.24,283.31,42.07C788,107.47,819.73,104.28,851.14,104.28Z"
+          opacity=".5" fill="#1d4ed8"
+        ></path>
         <path
-          d="M851.14,59.28c59.28,0,117.15,3.13,176.05,7.3,65.7,4.73,131.71,10.41,197.09,3.13v78.15H0V55.4C153.76,71.62,312.78,110.66,479.63,102.67c95.25-4.13,188-30.24,283.31-42.07C788,58,819.73,59.28,851.14,59.28Z"
-          fill="#1d4ed8"></path>
+          d="M851.14,59.28c59.28,0,117.15,3.13,176.05,7.3,
+             65.7,4.73,131.71,10.41,197.09,3.13v78.15H0V55.4C153.76,
+             71.62,312.78,110.66,479.63,102.67c95.25-4.13,
+             188-30.24,283.31-42.07C788,58,819.73,59.28,851.14,59.28Z"
+          fill="#1d4ed8"
+        ></path>
       </svg>
     </div>
 
@@ -347,13 +365,7 @@
             </a>
           </div>
         </div>
-
-        <!-- 9: Pet System (COMING SOON) -->
-        <!-- Omitted from the page for now, but you can re-enable if you’d like:
-             <div class="card p-6 flex flex-col md:flex-row items-center md:space-x-6 space-y-6 md:space-y-0">
-               ...
-             </div>
-        -->
+        <!-- 9: Pet System (COMING SOON) omitted -->
       </div>
     </section>
 
@@ -377,29 +389,39 @@
       <div class="flex flex-wrap justify-center gap-6">
         <!-- Epblox -->
         <div class="card p-5 text-center flex flex-col items-center space-y-4 w-64">
-          <img src="https://tr.rbxcdn.com/180DAY-a9d98dc8dfc0478eec706ec170b05fc9/150/150/Image/Webp/noFilter"
-            alt="Game Thumbnail" class="rounded-md w-[150px] h-[150px] object-cover">
+          <img
+            src="https://tr.rbxcdn.com/180DAY-a9d98dc8dfc0478eec706ec170b05fc9/150/150/Image/Webp/noFilter"
+            alt="Game Thumbnail"
+            class="rounded-md w-[150px] h-[150px] object-cover">
           <h4 class="text-lg font-semibold accent">Epblox | Theme Park</h4>
-          <a href="https://www.roblox.com/games/4502575730/Epblox-Theme-Park" target="_blank"
-            class="solid-button text-sm inline-flex mx-auto">
+          <a
+            href="https://www.roblox.com/games/4502575730/Epblox-Theme-Park"
+            target="_blank"
+            class="solid-button text-sm inline-flex mx-auto"
+          >
             Visit Game
           </a>
         </div>
 
         <!-- Summer Hotels -->
         <div class="card p-5 text-center flex flex-col items-center space-y-4 w-64">
-          <img src="https://tr.rbxcdn.com/180DAY-35229efb934d9077140db95a77d7e860/150/150/Image/Webp/noFilter"
-            alt="Game Thumbnail" class="rounded-md w-[150px] h-[150px] object-cover">
+          <img
+            src="https://tr.rbxcdn.com/180DAY-35229efb934d9077140db95a77d7e860/150/150/Image/Webp/noFilter"
+            alt="Game Thumbnail"
+            class="rounded-md w-[150px] h-[150px] object-cover">
           <h4 class="text-lg font-semibold accent">Summer Hotels</h4>
-          <a href="https://www.roblox.com/games/4544856695/Work-at-a-Hotel-Summer-Hotels-Resort-Spa" target="_blank"
-            class="solid-button text-sm inline-flex mx-auto">
+          <a
+            href="https://www.roblox.com/games/4544856695/Work-at-a-Hotel-Summer-Hotels-Resort-Spa"
+            target="_blank"
+            class="solid-button text-sm inline-flex mx-auto"
+          >
             Visit Game
           </a>
         </div>
       </div>
     </section>
 
-    <!-- SERVICES (still in the page, not changed) -->
+    <!-- SERVICES -->
     <section id="services" class="section-box p-8 space-y-8">
       <h3 class="text-3xl font-bold accent text-center">What I Offer</h3>
       <div class="grid md:grid-cols-3 gap-6">
@@ -427,7 +449,7 @@
       </div>
     </section>
 
-    <!-- CLIENTS (still present, not in the nav) -->
+    <!-- CLIENTS -->
     <section id="clients" class="space-y-8">
       <div>
         <h3 class="text-4xl font-bold accent text-center">Who I've Worked With</h3>
@@ -436,23 +458,34 @@
         </p>
       </div>
       <div class="flex justify-center">
-        <!-- Add "text-center" here -->
         <div class="card p-6 max-w-md w-full text-center">
           <h4 class="text-xl font-semibold accent">Caylus</h4>
           <p class="text-sm text-gray-600 mb-4">
             I created a GTA 5 script where the player must manually blink and breathe to survive.
           </p>
-          <a href="https://youtu.be/YqBVO6wYl_E?si=Z6a9e0tY_7fH8PUk" target="_blank">
-            <img src="caylus-thumbnail.jpg" alt="Caylus Video Thumbnail"
-              class="rounded-md w-full max-w-sm mx-auto mb-4 hover:opacity-90 transition">
+          <a
+            href="https://youtu.be/YqBVO6wYl_E?si=Z6a9e0tY_7fH8PUk"
+            target="_blank"
+          >
+            <img
+              src="caylus-thumbnail.jpg"
+              alt="Caylus Video Thumbnail"
+              class="rounded-md w-full max-w-sm mx-auto mb-4 hover:opacity-90 transition"
+            >
           </a>
           <div class="flex justify-center space-x-3">
-            <a href="https://www.youtube.com/@Caylus" target="_blank"
-              class="solid-button text-sm font-medium inline-flex">
+            <a
+              href="https://www.youtube.com/@Caylus"
+              target="_blank"
+              class="solid-button text-sm font-medium inline-flex"
+            >
               Channel
             </a>
-            <a href="https://youtu.be/YqBVO6wYl_E?si=Z6a9e0tY_7fH8PUk" target="_blank"
-              class="solid-button text-sm font-medium inline-flex">
+            <a
+              href="https://youtu.be/YqBVO6wYl_E?si=Z6a9e0tY_7fH8PUk"
+              target="_blank"
+              class="solid-button text-sm font-medium inline-flex"
+            >
               Watch Video
             </a>
           </div>
@@ -460,13 +493,15 @@
       </div>
     </section>
 
-    <!-- FAQ (now in the nav) -->
+    <!-- FAQ -->
     <section id="faq" class="section-box p-8 space-y-8">
       <h3 class="text-3xl font-bold accent text-center">FAQ</h3>
       <div class="space-y-4 text-left">
         <div class="border-b border-gray-200 pb-3">
-          <button class="w-full flex justify-between items-center text-base font-semibold accent"
-            onclick="toggleFaq(this)">
+          <button
+            class="w-full flex justify-between items-center text-base font-semibold accent"
+            onclick="toggleFaq(this)"
+          >
             <span>Do you require an upfront payment?</span>
             <span class="arrow transform transition-transform">▼</span>
           </button>
@@ -476,8 +511,10 @@
         </div>
 
         <div class="border-b border-gray-200 pb-3">
-          <button class="w-full flex justify-between items-center text-base font-semibold accent"
-            onclick="toggleFaq(this)">
+          <button
+            class="w-full flex justify-between items-center text-base font-semibold accent"
+            onclick="toggleFaq(this)"
+          >
             <span>How long do projects take?</span>
             <span class="arrow transform transition-transform">▼</span>
           </button>
@@ -488,8 +525,10 @@
         </div>
 
         <div class="border-b border-gray-200 pb-3">
-          <button class="w-full flex justify-between items-center text-base font-semibold accent"
-            onclick="toggleFaq(this)">
+          <button
+            class="w-full flex justify-between items-center text-base font-semibold accent"
+            onclick="toggleFaq(this)"
+          >
             <span>Do you offer revisions?</span>
             <span class="arrow transform transition-transform">▼</span>
           </button>
@@ -499,8 +538,10 @@
         </div>
 
         <div class="border-b border-gray-200 pb-3">
-          <button class="w-full flex justify-between items-center text-base font-semibold accent"
-            onclick="toggleFaq(this)">
+          <button
+            class="w-full flex justify-between items-center text-base font-semibold accent"
+            onclick="toggleFaq(this)"
+          >
             <span>What payment methods do you accept?</span>
             <span class="arrow transform transition-transform">▼</span>
           </button>
@@ -510,8 +551,10 @@
         </div>
 
         <div class="border-b border-gray-200 pb-3">
-          <button class="w-full flex justify-between items-center text-base font-semibold accent"
-            onclick="toggleFaq(this)">
+          <button
+            class="w-full flex justify-between items-center text-base font-semibold accent"
+            onclick="toggleFaq(this)"
+          >
             <span>What’s your development process?</span>
             <span class="arrow transform transition-transform">▼</span>
           </button>
@@ -523,7 +566,7 @@
       </div>
     </section>
 
-    <!-- REVIEWS (not in the nav, but still on page) -->
+    <!-- REVIEWS -->
     <section id="reviews" class="space-y-8">
       <div>
         <h3 class="text-4xl font-bold accent text-center">Reviews</h3>
@@ -539,7 +582,7 @@
       </div>
     </section>
 
-    <!-- CONTACT (in the nav) -->
+    <!-- CONTACT -->
     <section id="contact" class="section-box p-8 space-y-4">
       <h3 class="text-3xl font-bold accent text-center">Get In Touch</h3>
       <div class="flex justify-center flex-col items-center space-y-2">
@@ -586,5 +629,4 @@
     }
   </script>
 </body>
-
 </html>
