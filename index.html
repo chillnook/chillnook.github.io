@@ -6,21 +6,18 @@
   <title>ChillNook | Roblox Developer</title>
   <link rel="icon" href="favicon.png" type="image/x-icon">
 
-  <!-- Tailwind CSS -->
   <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
 
-  <!-- Additional styles to further modernize and center elements -->
   <style>
     body {
       font-family: 'Inter', sans-serif;
-      /* Hide horizontal overflow on mobile */
       overflow-x: hidden;
       background-color: #f8fafc;
       color: #1f2937;
     }
 
     header {
-      position: sticky; /* Keep your existing sticky if you want */
+      position: sticky;
       top: 0;
       z-index: 50;
       background-color: #ffffff;
@@ -28,8 +25,6 @@
       box-shadow: 0 1px 4px rgba(0, 0, 0, 0.05);
     }
 
-    /* EXACT same color, text style as before for large screens, 
-       but we use flex-col on small screens (below md) to stack nav links. */
     nav a {
       color: #374151;
       transition: color 0.2s;
@@ -38,7 +33,6 @@
       color: #1d4ed8;
     }
 
-    /* Modern outline style for the call-to-action buttons */
     .solid-button {
       display: inline-flex;
       align-items: center;
@@ -125,16 +119,12 @@
 </head>
 
 <body>
-
-  <!-- NAVIGATION / HEADER (with brand left, links stacked on mobile, row on md+) -->
   <header class="py-4 px-6 relative md:sticky md:top-0 z-50 bg-white border-b border-gray-200 shadow-sm">
     <div class="max-w-7xl mx-auto">
       <div class="flex flex-col md:flex-row items-center justify-between">
-        <!-- Brand Name: centered on mobile, left-aligned on md+ -->
         <div class="text-lg font-bold uppercase tracking-wide text-gray-700 text-center md:text-left">
           ChillNook
         </div>
-        <!-- Navigation: stacked vertically on mobile, horizontal on md+ -->
         <nav class="flex flex-col md:flex-row space-y-2 md:space-y-0 md:space-x-6 font-semibold uppercase text-sm text-center">
           <a href="#projects">Projects</a>
           <a href="#services">Services</a>
@@ -149,7 +139,6 @@
   
   <main class="max-w-7xl mx-auto px-6 py-10 space-y-16">
 
-    <!-- HERO SECTION -->
     <section class="flex flex-col md:flex-row md:items-center md:space-x-8 space-y-8 md:space-y-0">
       <div class="flex-1 space-y-6 text-center md:text-left">
         <h2 class="text-5xl md:text-6xl font-extrabold text-gray-800 leading-tight">
@@ -165,7 +154,6 @@
           </a>
         </div>
       </div>
-      <!-- Right-side image/graphic -->
       <div class="flex-1 hidden md:block">
         <img
           src="https://pbs.twimg.com/profile_images/1813703999507361792/C6qnwwx6_400x400.jpg"
@@ -175,7 +163,6 @@
       </div>
     </section>
 
-    <!-- Wave divider below the hero -->
     <div class="wave-bottom">
       <svg preserveAspectRatio="none" viewBox="0 0 1200 120" xmlns="http://www.w3.org/2000/svg">
         <path
@@ -203,7 +190,6 @@
       </svg>
     </div>
 
-    <!-- PROJECTS -->
     <section id="projects" class="space-y-8">
       <div>
         <h3 class="text-4xl font-bold accent text-center">Projects I've Built</h3>
@@ -212,7 +198,6 @@
         </p>
       </div>
 
-      <!-- Project feature layout -->
       <div class="space-y-12">
         <!-- 1: Leaderboard System -->
         <div class="card p-6 flex flex-col md:flex-row items-center md:space-x-6 space-y-6 md:space-y-0">
@@ -365,11 +350,9 @@
             </a>
           </div>
         </div>
-        <!-- 9: Pet System (COMING SOON) omitted -->
       </div>
     </section>
 
-    <!-- wave divider above games section -->
     <div class="wave-top">
       <svg preserveAspectRatio="none" viewBox="0 0 1200 120" xmlns="http://www.w3.org/2000/svg">
         <path
@@ -378,7 +361,6 @@
       </svg>
     </div>
 
-    <!-- GAMES (still exists, just not in the nav) -->
     <section id="games" class="space-y-8 bg-gray-50 py-10 rounded">
       <div>
         <h3 class="text-4xl font-bold accent text-center">Games I've Worked On</h3>
@@ -386,56 +368,127 @@
           Here are a few Roblox experiences I contributed to.
         </p>
       </div>
-      <div class="flex flex-wrap justify-center gap-6">
-        <!-- Epblox -->
-        <div class="card p-5 text-center flex flex-col items-center space-y-4 w-64">
-          <img
-            src="https://tr.rbxcdn.com/180DAY-a9d98dc8dfc0478eec706ec170b05fc9/150/150/Image/Webp/noFilter"
-            alt="Game Thumbnail"
-            class="rounded-md w-[150px] h-[150px] object-cover">
-          <h4 class="text-lg font-semibold accent">Epblox | Theme Park</h4>
-          <a
-            href="https://www.roblox.com/games/4502575730/Epblox-Theme-Park"
-            target="_blank"
-            class="solid-button text-sm inline-flex mx-auto"
-          >
-            Visit Game
-          </a>
-        </div>
+      <div class="relative">
+        <button id="scrollLeft" type="button" class="absolute left-0 top-1/2 transform -translate-y-1/2 z-10 bg-white border rounded-full p-2 shadow hover:bg-gray-100">
+          ◀
+        </button>
+        <div id="games-scroll" class="flex overflow-x-auto space-x-6 px-10 py-4 scroll-smooth scrollbar-hide">
+          <div class="card p-5 text-center flex flex-col items-center w-64 flex-shrink-0 h-[420px]">
+            <img src="https://tr.rbxcdn.com/180DAY-a1421e67a6cac00846bad2abd8f63560/150/150/Image/Webp/noFilter" alt="Game Thumbnail" class="rounded-md w-[150px] h-[150px] object-cover">
+            <h4 class="text-lg font-semibold accent mt-4">Free Owner Admin [Abuse]</h4>
+            <div class="mt-auto pt-4">
+              <a href="https://www.roblox.com/games/5023687570/Free-Owner-Admin-Abuse" target="_blank" class="solid-button text-sm inline-flex mx-auto">Visit Game</a>
+            </div>
+          </div>
+    
+          <div class="card p-5 text-center flex flex-col items-center w-64 flex-shrink-0 h-[420px]">
+            <img src="https://tr.rbxcdn.com/180DAY-dabebe6ad2c1730a881cc4af7d75cd47/150/150/Image/Webp/noFilter" alt="Game Thumbnail" class="rounded-md w-[150px] h-[150px] object-cover">
+            <h4 class="text-lg font-semibold accent mt-4">5 Year Rocket Countdown</h4>
+            <div class="mt-auto pt-4">
+              <a href="https://www.roblox.com/games/79785483775709/UPD-5-Year-Rocket-Countdown" target="_blank" class="solid-button text-sm inline-flex mx-auto">Visit Game</a>
+            </div>
+          </div>
+    
+          <div class="card p-5 text-center flex flex-col items-center w-64 flex-shrink-0 h-[420px]">
+            <img src="https://tr.rbxcdn.com/180DAY-35229efb934d9077140db95a77d7e860/150/150/Image/Webp/noFilter" alt="Game Thumbnail" class="rounded-md w-[150px] h-[150px] object-cover">
+            <h4 class="text-lg font-semibold accent mt-4">Summer Hotels</h4>
+            <div class="mt-auto pt-4">
+              <a href="https://www.roblox.com/games/4544856695/Work-at-a-Hotel-Summer-Hotels-Resort-Spa" target="_blank" class="solid-button text-sm inline-flex mx-auto">Visit Game</a>
+            </div>
+          </div>
 
-        <!-- Summer Hotels -->
-        <div class="card p-5 text-center flex flex-col items-center space-y-4 w-64">
-          <img
-            src="https://tr.rbxcdn.com/180DAY-35229efb934d9077140db95a77d7e860/150/150/Image/Webp/noFilter"
-            alt="Game Thumbnail"
-            class="rounded-md w-[150px] h-[150px] object-cover">
-          <h4 class="text-lg font-semibold accent">Summer Hotels</h4>
-          <a
-            href="https://www.roblox.com/games/4544856695/Work-at-a-Hotel-Summer-Hotels-Resort-Spa"
-            target="_blank"
-            class="solid-button text-sm inline-flex mx-auto"
-          >
-            Visit Game
-          </a>
+          <div class="card p-5 text-center flex flex-col items-center w-64 flex-shrink-0 h-[420px]">
+            <img src="https://tr.rbxcdn.com/180DAY-a9d98dc8dfc0478eec706ec170b05fc9/150/150/Image/Webp/noFilter" alt="Game Thumbnail" class="rounded-md w-[150px] h-[150px] object-cover">
+            <h4 class="text-lg font-semibold accent mt-4">Epblox | Theme Park</h4>
+            <div class="mt-auto pt-4">
+              <a href="https://www.roblox.com/games/4502575730/Epblox-Theme-Park" target="_blank" class="solid-button text-sm inline-flex mx-auto">Visit Game</a>
+            </div>
+          </div>
+    
+          <div class="card p-5 text-center flex flex-col items-center w-64 flex-shrink-0 h-[420px]">
+            <img src="https://tr.rbxcdn.com/180DAY-4189dd3733fd328422ccec2c893a19c7/150/150/Image/Webp/noFilter" alt="Game Thumbnail" class="rounded-md w-[150px] h-[150px] object-cover">
+            <h4 class="text-lg font-semibold accent mt-4">Party Games</h4>
+            <div class="mt-auto pt-4">
+              <a href="https://www.roblox.com/games/116843704095918/Party-Games" target="_blank" class="solid-button text-sm inline-flex mx-auto">Coming Soon</a>
+            </div>
+          </div>
         </div>
-
-         <!-- Party Games -->
-         <div class="card p-5 text-center flex flex-col items-center space-y-4 w-64">
-          <img
-            src="https://tr.rbxcdn.com/180DAY-4189dd3733fd328422ccec2c893a19c7/150/150/Image/Webp/noFilter"
-            alt="Game Thumbnail"
-            class="rounded-md w-[150px] h-[150px] object-cover">
-          <h4 class="text-lg font-semibold accent">Party Games</h4>
-          <a
-            href="https://www.roblox.com/games/116843704095918/Party-Games"
-            target="_blank"
-            class="solid-button text-sm inline-flex mx-auto"
-          >
-            Coming Soon
-          </a>
-        </div>
+        <button id="scrollRight" type="button" class="absolute right-0 top-1/2 transform -translate-y-1/2 z-10 bg-white border rounded-full p-2 shadow hover:bg-gray-100">
+          ▶
+        </button>
       </div>
     </section>
+    
+    <script>
+      window.addEventListener("DOMContentLoaded", () => {
+        const scrollContainer = document.getElementById('games-scroll');
+        const scrollLeftBtn = document.getElementById('scrollLeft');
+        const scrollRightBtn = document.getElementById('scrollRight');
+    
+        if (scrollContainer && scrollLeftBtn && scrollRightBtn) {
+          scrollLeftBtn.addEventListener('click', () => {
+            scrollContainer.scrollBy({ left: -scrollContainer.offsetWidth, behavior: 'smooth' });
+          });
+          scrollRightBtn.addEventListener('click', () => {
+            scrollContainer.scrollBy({ left: scrollContainer.offsetWidth, behavior: 'smooth' });
+          });
+        }
+      });
+    </script>
+    
+    <style>
+      .scrollbar-hide::-webkit-scrollbar {
+        display: none;
+      }
+      .scrollbar-hide {
+        -ms-overflow-style: none;
+        scrollbar-width: none;
+      }
+    </style>
+    
+    <script>
+      window.addEventListener("DOMContentLoaded", () => {
+        const scrollContainer = document.getElementById('games-scroll');
+        const scrollLeftBtn = document.getElementById('scrollLeft');
+        const scrollRightBtn = document.getElementById('scrollRight');
+    
+        if (scrollContainer && scrollLeftBtn && scrollRightBtn) {
+          scrollLeftBtn.addEventListener('click', () => {
+            scrollContainer.scrollBy({ left: -scrollContainer.offsetWidth, behavior: 'smooth' });
+          });
+          scrollRightBtn.addEventListener('click', () => {
+            scrollContainer.scrollBy({ left: scrollContainer.offsetWidth, behavior: 'smooth' });
+          });
+        }
+      });
+    </script>
+    
+    <style>
+      .scrollbar-hide::-webkit-scrollbar {
+        display: none;
+      }
+      .scrollbar-hide {
+        -ms-overflow-style: none;
+        scrollbar-width: none;
+      }
+    </style>
+    
+    <script>
+      window.addEventListener("DOMContentLoaded", () => {
+        const scrollContainer = document.getElementById('games-scroll');
+        const scrollLeftBtn = document.getElementById('scrollLeft');
+        const scrollRightBtn = document.getElementById('scrollRight');
+    
+        if (scrollContainer && scrollLeftBtn && scrollRightBtn) {
+          scrollLeftBtn.addEventListener('click', () => {
+            scrollContainer.scrollBy({ left: -300, behavior: 'smooth' });
+          });
+          scrollRightBtn.addEventListener('click', () => {
+            scrollContainer.scrollBy({ left: 300, behavior: 'smooth' });
+          });
+        }
+      });
+    </script>
 
     <!-- SERVICES -->
     <section id="services" class="section-box p-8 space-y-8">
